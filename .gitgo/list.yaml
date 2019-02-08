@@ -1,0 +1,7 @@
+version: 3
+commits:
+  - type: empty
+    value: Update this commit header
+branches:
+  - type: empty
+    value: Update this branch header
