@@ -2,6 +2,12 @@
 ## [Unreleased]
 
 
+<a name="1.1.0"></a>
+## [1.1.0] - 2019-02-09
+### Feature
+- **ui:** add footer that explain about license
+
+
 <a name="1.0.0"></a>
 ## 1.0.0 - 2019-02-09
 ### Documentation
@@ -19,4 +25,5 @@
 - **logo:** add kcnt icon to folder
 
 
-[Unreleased]: https://gitlab.com/kamontat/logo/compare/1.0.0...HEAD
+[Unreleased]: https://gitlab.com/kamontat/logo/compare/1.1.0...HEAD
+[1.1.0]: https://gitlab.com/kamontat/logo/compare/1.0.0...1.1.0
