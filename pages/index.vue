@@ -59,6 +59,23 @@
         </div>
       </div>
     </section>
+    <footer class="footer has-text-dark">
+      <div class="content">
+        <h3 class="has-text-dark">This is a website for list all icon and logo for personal use</h3>
+        <h5 class="has-text-dark">Everyone can use all of this files as long as you apply with following license</h5>
+        <a 
+          rel="license" 
+          href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img 
+            alt="Creative Commons License" 
+            style="border-width:0" 
+            src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" ></a><br >This work is licensed under a <a 
+              rel="license" 
+              href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+
+        <br>
+        <small>As developer (<a href="https://github.com/kamontat">Kamontat Chantrachirathumrong</a>) I feel appreciate for everyone who visit our website, Thank you and be fun</small>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -66,7 +83,7 @@
 const KCNT_FOLDER = 'static/kcnt'
 const KC_FOLDER = 'static/kc'
 
-function getFiles(fs, dir, files_) {
+function getFiles(fs, dir, type, files_) {
   files_ = files_ || []
   var files = fs.readdirSync(dir)
   for (var i in files) {
@@ -74,7 +91,7 @@ function getFiles(fs, dir, files_) {
     if (name.includes('.ai')) continue // remove ai file
 
     if (fs.statSync(name).isDirectory()) {
-      getFiles(fs, name, files_)
+      getFiles(fs, name, type, files_)
     } else {
       const s = name.match(/[0-9]+w/)
 
@@ -82,7 +99,7 @@ function getFiles(fs, dir, files_) {
         name: name.substring(name.lastIndexOf('/') + 1, name.lastIndexOf('.')),
         extension: name.substring(name.lastIndexOf('.') + 1),
         size: s && s.length > 0 ? s[0] : undefined,
-        type: 'kcnt',
+        type: type,
         url: name.replace('static', '')
       })
     }
@@ -95,8 +112,8 @@ export default {
     if (process.server) {
       const fs = require('fs')
 
-      const results = getFiles(fs, KCNT_FOLDER)
-      results.push(...getFiles(fs, KC_FOLDER))
+      const results = getFiles(fs, KCNT_FOLDER, 'kcnt')
+      results.push(...getFiles(fs, KC_FOLDER, 'kc'))
       return { images: results, filter: query.filter || '' }
     }
   },
