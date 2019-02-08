@@ -1,7 +1,7 @@
 {
-  "name": "resume",
+  "name": "logo",
   "version": "1.0.0",
-  "description": "my resume project",
+  "description": "logo dependencies and collection",
   "author": "Kamontat Chantrachirathumrong",
   "private": true,
   "scripts": {
@@ -13,17 +13,10 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "1.2.14",
-    "@fortawesome/free-brands-svg-icons": "5.7.1",
-    "@fortawesome/free-regular-svg-icons": "5.7.1",
-    "@fortawesome/free-solid-svg-icons": "5.7.1",
-    "@fortawesome/vue-fontawesome": "0.1.5",
-    "@nuxtjs/axios": "5.3.6",
     "@nuxtjs/google-analytics": "2.0.2",
     "bulma": "0.7.2",
     "node-sass": "4.11.0",
     "nuxt": "2.4.2",
-    "nuxt-fontawesome": "0.4.0",
     "sass-loader": "7.1.0"
   },
   "devDependencies": {

@@ -8,7 +8,7 @@ module.exports = {
    ** Headers of the page
    */
   head: {
-    title: pkg.name,
+    title: 'Logo',
     meta: [
       {
         charset: 'utf-8'
@@ -62,36 +62,10 @@ module.exports = {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/axios', '@nuxtjs/google-analytics', 'nuxt-fontawesome'],
+  modules: ['@nuxtjs/google-analytics'],
 
   'google-analytics': {
-    id: 'UA-124896160-6'
-  },
-
-  /*
-   ** Axios module configuration
-   */
-  axios: {
-    // See https://github.com/nuxt-community/axios-module#options
-  },
-
-  fontawesome: {
-    component: 'fa',
-    imports: [
-      //import whole set
-      {
-        set: '@fortawesome/free-solid-svg-icons',
-        icons: ['fas']
-      },
-      {
-        set: '@fortawesome/free-regular-svg-icons',
-        icons: ['far']
-      },
-      {
-        set: '@fortawesome/free-brands-svg-icons',
-        icons: ['fab']
-      }
-    ]
+    id: 'UA-124896160-8'
   },
 
   generate: {
@@ -110,6 +84,7 @@ module.exports = {
         }
       }
     },
+
     /*
      ** You can extend webpack config here
      */
