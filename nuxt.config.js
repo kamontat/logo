@@ -119,6 +119,10 @@ module.exports = {
         loaders.cssModules.localIdentName =
           'kcnt__[name]_[contenthash:base64:18]'
 
+      config.node = {
+        fs: 'empty'
+      }
+
       // Run ESLint on save
       if (isDev && isClient) {
         config.module.rules.push({
