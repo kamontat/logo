@@ -31,25 +31,31 @@
           class="column is-half-mobile is-one-third-tablet is-one-third-desktop is-one-quarter-widescreen is-one-fifth-fullhd">
           <div class="card">
             <div class="card-image">
-              <a :href="image.url">
-                <figure class="image is-square">
-                  <img 
-                    :src="image.url" 
-                    :alt="image.name">
-                </figure>
-              </a>
+              <figure 
+                v-clipboard:copy="fullpath + image.url" 
+                v-clipboard:success="onCopy"
+                class="image is-square is-hoverable">
+                <img 
+                  :src="image.url" 
+                  :alt="image.name">
+                <div class="hover-container">
+                  <div 
+                    :class="{'active': copy}" 
+                    class="image-text">{{ copyMessage }}</div>
+                </div>
+              </figure>
             </div>
             <div class="card-content">
               <div class="content">
                 <a 
                   v-if="image.type" 
-                  href="#">#{{ image.type }}</a>
+                  :href="'/?filter='+image.type">#{{ image.type }}</a>
                 <a 
                   v-if="image.size" 
-                  href="#">#{{ image.size }}</a>
+                  :href="'/?filter='+image.size">#{{ image.size }}</a>
                 <a 
                   v-if="image.extension" 
-                  href="#">#{{ image.extension }}</a> <br>
+                  :href="'/?filter='+image.extension">#{{ image.extension }}</a> <br>
                 <a 
                   :href="image.url" 
                   target="_blank">{{ image.name }}</a>
@@ -71,7 +77,6 @@
             src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" ></a><br >This work is licensed under a <a 
               rel="license" 
               href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
-
         <br>
         <small>As developer (<a href="https://github.com/kamontat">Kamontat Chantrachirathumrong</a>) I feel appreciate for everyone who visit our website, Thank you and be fun</small>
       </div>
@@ -114,7 +119,12 @@ export default {
 
       const results = getFiles(fs, KCNT_FOLDER, 'kcnt')
       results.push(...getFiles(fs, KC_FOLDER, 'kc'))
-      return { images: results, filter: query.filter || '' }
+      return {
+        images: results,
+        filter: query.filter || '',
+        fullpath: process.env.FULLPATH,
+        copy: false
+      }
     }
   },
   computed: {
@@ -124,6 +134,20 @@ export default {
         `^${filters.map(f => `(?=.*\\b${f}\\b)`).join('')}.*$`
       )
       return this.images.filter(image => regex.test(image.url))
+    },
+    copyMessage() {
+      return this.copy ? 'copied' : 'click to copy'
+    }
+  },
+  methods: {
+    onCopy() {
+      this.copy = true
+
+      console.log('on copy')
+
+      setTimeout(() => {
+        this.copy = false
+      }, 1000)
     }
   }
 }
@@ -131,6 +155,49 @@ export default {
 
 <style lang="scss" scoped>
 @import '~/assets/styles/variable.scss';
+
+.is-hoverable img {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+}
+
+.is-hoverable:hover img {
+  opacity: 0.3;
+}
+
+.is-hoverable:hover .hover-container {
+  opacity: 1;
+}
+
+.hover-container {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.image-text {
+  background-color: $dark;
+  color: $light;
+  font-size: 2rem;
+
+  border-radius: $round-a;
+
+  padding: $gap-f-1;
+}
+
+.image-text.active {
+  background-color: $green;
+  color: $dark;
+}
 
 .header {
   margin-top: $gap-f-2;

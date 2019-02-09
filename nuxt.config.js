@@ -52,17 +52,24 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: ['~/assets/styles/font.scss', '~/assets/styles/bulma.scss'],
+  css: ['~/assets/styles/font', '~/assets/styles/bulma'],
 
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['~/plugins/clipboard.js'],
 
   /*
    ** Nuxt.js modules
    */
   modules: ['@nuxtjs/google-analytics'],
+
+  env: {
+    FULLPATH:
+      process.env.NODE_ENV === 'development'
+        ? 'http://localhost:3000'
+        : 'https://logo.kamontat.net'
+  },
 
   'google-analytics': {
     id: 'UA-124896160-8'
