@@ -28,7 +28,7 @@
         <div 
           v-for="image in filterImages"
           :key="image.url"
-          class="column is-half-mobile is-one-third-tablet is-one-third-desktop is-one-quarter-widescreen is-one-fifth-fullhd">
+          class="column is-full-mobile is-one-third-tablet is-one-third-desktop is-one-quarter-widescreen is-one-fifth-fullhd">
           <div class="card">
             <div class="card-image">
               <figure 
