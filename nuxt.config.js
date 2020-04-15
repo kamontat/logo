@@ -72,7 +72,7 @@ module.exports = {
   },
 
   'google-analytics': {
-    id: 'UA-124896160-8'
+    id: 'UA-162524913-2'
   },
 
   generate: {
