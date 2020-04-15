@@ -9,8 +9,7 @@ module.exports = {
    */
   head: {
     title: 'Logo',
-    meta: [
-      {
+    meta: [{
         charset: 'utf-8'
       },
       {
@@ -33,13 +32,11 @@ module.exports = {
         content: pkg.author
       }
     ],
-    link: [
-      {
-        rel: 'icon',
-        type: 'image/x-icon',
-        href: '/favicon.ico'
-      }
-    ]
+    link: [{
+      rel: 'icon',
+      type: 'image/x-icon',
+      href: '/favicon.ico'
+    }]
   },
 
   /*
@@ -62,17 +59,37 @@ module.exports = {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/google-analytics'],
+  modules: [
+    // Doc: https://github.com/nuxt-community/gtm-module#setup
+    '@nuxtjs/gtm'
+  ],
 
   env: {
-    FULLPATH:
-      process.env.NODE_ENV === 'development'
-        ? 'http://localhost:3000'
-        : 'https://logo.kamontat.net'
+    FULLPATH: process.env.NODE_ENV === 'development' ?
+      'http://localhost:3000' :
+      'https://logo.kamontat.net'
   },
 
-  'google-analytics': {
-    id: 'UA-162524913-2'
+  gtm: {
+    dev: true,
+
+    id: 'GTM-TNXHV84',
+    layer: 'dataLayer',
+    variables: {},
+
+    pageTracking: true,
+    pageViewEventName: 'nuxtRoute',
+
+    autoInit: true,
+    respectDoNotTrack: false,
+
+    scriptId: 'gtm-script',
+    scriptDefer: false,
+    scriptURL: 'https://www.googletagmanager.com/gtm.js',
+
+    noscript: true,
+    noscriptId: 'gtm-noscript',
+    noscriptURL: 'https://www.googletagmanager.com/ns.html'
   },
 
   generate: {
@@ -95,11 +112,13 @@ module.exports = {
     /*
      ** You can extend webpack config here
      */
-    extend(config, { isDev, isClient, loaders }) {
+    extend(config, {
+      isDev,
+      isClient,
+      loaders
+    }) {
       if (isDev) loaders.cssModules.localIdentName = '[name]_[local]'
-      else
-        loaders.cssModules.localIdentName =
-          'kcnt__[name]_[contenthash:base64:18]'
+      else loaders.cssModules.localIdentName = 'logo_[contenthash:base64:18]'
 
       config.node = {
         fs: 'empty'
