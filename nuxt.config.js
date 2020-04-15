@@ -10,40 +10,40 @@ module.exports = {
   head: {
     title: 'Logo',
     meta: [{
-        charset: 'utf-8'
+        charset: 'utf-8',
       },
       {
         name: 'viewport',
-        content: 'width=device-width, initial-scale=1'
+        content: 'width=device-width, initial-scale=1',
       },
       {
         hid: 'description',
         name: 'description',
-        content: pkg.description
+        content: pkg.description,
       },
       {
         hid: 'version',
         name: 'version',
-        content: pkg.version
+        content: pkg.version,
       },
       {
         hid: 'author',
         name: 'author',
-        content: pkg.author
-      }
+        content: pkg.author,
+      },
     ],
     link: [{
       rel: 'icon',
       type: 'image/x-icon',
-      href: '/favicon.ico'
-    }]
+      href: '/favicon.ico',
+    }, ],
   },
 
   /*
    ** Customize the progress-bar color
    */
   loading: {
-    color: '#fff'
+    color: '#fff',
   },
 
   /*
@@ -61,13 +61,13 @@ module.exports = {
    */
   modules: [
     // Doc: https://github.com/nuxt-community/gtm-module#setup
-    '@nuxtjs/gtm'
+    '@nuxtjs/gtm',
   ],
 
   env: {
     FULLPATH: process.env.NODE_ENV === 'development' ?
       'http://localhost:3000' :
-      'https://logo.kamontat.net'
+      'https://logo.kamontat.net',
   },
 
   gtm: {
@@ -89,11 +89,11 @@ module.exports = {
 
     noscript: true,
     noscriptId: 'gtm-noscript',
-    noscriptURL: 'https://www.googletagmanager.com/ns.html'
+    noscriptURL: 'https://www.googletagmanager.com/ns.html',
   },
 
   generate: {
-    fallback: '404.html'
+    fallback: '404.html',
   },
 
   /*
@@ -104,9 +104,9 @@ module.exports = {
     postcss: {
       preset: {
         features: {
-          customProperties: false
-        }
-      }
+          customProperties: false,
+        },
+      },
     },
 
     /*
@@ -121,18 +121,18 @@ module.exports = {
       else loaders.cssModules.localIdentName = 'logo_[contenthash:base64:18]'
 
       config.node = {
-        fs: 'empty'
+        fs: 'empty',
       }
 
       // Run ESLint on save
       if (isDev && isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
+        // config.module.rules.push({
+        //   enforce: 'pre',
+        //   test: /\.(js|vue)$/,
+        //   loader: 'eslint-loader',
+        //   exclude: /(node_modules)/,
+        // })
       }
-    }
-  }
+    },
+  },
 }

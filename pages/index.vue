@@ -48,11 +48,23 @@
             <div class="card-content">
               <div class="content">
                 <a 
+                  v-if="image.version" 
+                  :href="'/?filter='+image.version">#{{ image.version }}</a>
+                <a 
                   v-if="image.type" 
                   :href="'/?filter='+image.type">#{{ image.type }}</a>
                 <a 
-                  v-if="image.size" 
-                  :href="'/?filter='+image.size">#{{ image.size }}</a>
+                  v-if="image.color.primary" 
+                  :href="'/?filter='+image.color.primary">#{{ image.color.primary }}</a>
+                <a 
+                  v-if="image.color.background" 
+                  :href="'/?filter='+image.color.background">#{{ image.color.background }}</a>
+                <a 
+                  v-if="image.size.width" 
+                  :href="'/?filter='+image.size.width">#{{ image.size.width }}W</a>
+                <a 
+                  v-if="image.size.height" 
+                  :href="'/?filter='+image.size.height">#{{ image.size.height }}H</a>
                 <a 
                   v-if="image.extension" 
                   :href="'/?filter='+image.extension">#{{ image.extension }}</a> <br>
@@ -85,31 +97,51 @@
 </template>
 
 <script>
-const KCNT_FOLDER = 'static/kcnt'
-const KC_FOLDER = 'static/kc'
+const KCNT_FOLDER = 'static/v2/kcnt'
+const KC_FOLDER = 'static/v2/kc'
 
-function getFiles(fs, dir, type, files_) {
-  files_ = files_ || []
+function getFiles(fs, dir, _files) {
+  _files = _files || []
   var files = fs.readdirSync(dir)
   for (var i in files) {
     var name = dir + '/' + files[i]
-    if (name.includes('.ai')) continue // remove ai file
 
     if (fs.statSync(name).isDirectory()) {
-      getFiles(fs, name, type, files_)
+      getFiles(fs, name, _files)
     } else {
-      const s = name.match(/[0-9]+w/)
+      const arr = name.split('/')
+      if (arr.length === 7) {
+        const version = arr[1]
+        const type = arr[2]
+        const style = arr[3]
+        const mainColor = arr[4]
+        const bgColor = arr[5]
 
-      files_.push({
-        name: name.substring(name.lastIndexOf('/') + 1, name.lastIndexOf('.')),
-        extension: name.substring(name.lastIndexOf('.') + 1),
-        size: s && s.length > 0 ? s[0] : undefined,
-        type: type,
-        url: name.replace('static', '')
-      })
+        const filename = arr[6]
+
+        const regex = /(\d+)x(\d+)\.(.+)$/.exec(filename)
+        if (regex && regex.length > 3) {
+          _files.push({
+            version,
+            name: '',
+            extension: regex[3],
+            size: {
+              width: regex[1],
+              height: regex[2]
+            },
+            color: {
+              primary: mainColor,
+              background: bgColor
+            },
+            type: type,
+            style: style,
+            url: name.replace('static', '')
+          })
+        }
+      }
     }
   }
-  return files_
+  return _files
 }
 
 export default {
@@ -117,8 +149,8 @@ export default {
     if (process.server) {
       const fs = require('fs')
 
-      const results = getFiles(fs, KCNT_FOLDER, 'kcnt')
-      results.push(...getFiles(fs, KC_FOLDER, 'kc'))
+      const results = getFiles(fs, KCNT_FOLDER)
+      results.push(...getFiles(fs, KC_FOLDER))
       return {
         images: results,
         filter: query.filter || '',
@@ -205,3 +237,4 @@ export default {
   margin-right: $gap-f-2;
 }
 </style>
+
