@@ -1,0 +1,20 @@
+version: 4
+commit:
+  keys:
+    - type: feat
+      value: Introducing new features.
+    - type: perf
+      value: Improving user experience / usability / reliablity.
+    - type: fix
+      value: Fixing a bug.
+    - type: refac
+      value: A code change that neither fixes a bug nor adds a feature.
+    - type: chore
+      value: Other changes that don't modify src or test files.
+  scopes:
+    - type: prog
+      value: programming
+    - type: ui
+      value: css and styles
+    - type: asset
+      value: image and logo

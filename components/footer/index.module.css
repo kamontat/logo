@@ -1,0 +1,34 @@
+.container {
+  @apply flex mt-2;
+}
+
+.leftContainer {
+  @apply flex items-center mr-2;
+}
+
+.rightContainer {
+  @apply ml-2;
+}
+
+.footer {
+  @apply w-full border-t border-solid border-gray-500;
+  @apply flex content-center items-center;
+}
+
+.title {
+  @apply mt-2;
+  @apply font-sans font-bold;
+}
+
+.subtitle {
+  @apply mb-3;
+}
+
+.licenseLink {
+  height: 31px;
+}
+
+.licenseImg {
+  @apply border-0;
+  min-width: 50px;
+}

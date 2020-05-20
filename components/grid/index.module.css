@@ -1,0 +1,31 @@
+.grid {
+  @apply flex flex-row flex-wrap items-center justify-center flex-wrap;
+  @apply w-full;
+  @apply mt-5;
+
+  max-width: 1200px;
+}
+
+@screen sm {
+  .grid {
+    @apply flex-col;
+  }
+}
+
+@screen md {
+  .grid {
+    @apply flex-row;
+  }
+}
+
+@screen lg {
+  .grid {
+    @apply flex-row;
+  }
+}
+
+@screen xl {
+  .grid {
+    @apply flex-row;
+  }
+}

@@ -1,0 +1,50 @@
+.card {
+  @apply flex-1;
+  @apply overflow-hidden rounded-lg border border-solid border-gray-500 p-5 m-3;
+
+  @apply appearance-none no-underline text-left;
+  @apply bg-white;
+
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.card:hover,
+.card:focus,
+.card:active {
+  @apply border-blue-500;
+}
+
+.card .img {
+  @apply h-auto;
+
+  max-width: 400px;
+  width: 150px;
+}
+
+@screen sm {
+  .card .img {
+    width: 200px;
+  }
+}
+
+@screen md {
+  .card .img {
+    width: 250px;
+  }
+}
+
+@screen lg {
+  .card .img {
+    width: 300px;
+  }
+}
+
+@screen xl {
+  .card .img {
+    width: 350px;
+  }
+}
+
+.card .detail {
+  @apply text-lg font-bold text-left;
+}
