@@ -6,5 +6,5 @@ export interface GridProps {
 }
 
 export default function Grid(props: GridProps) {
-  return <div className={style.grid}>{props.children}</div>;
+  return <div className={style.gridLayout}>{props.children}</div>;
 }

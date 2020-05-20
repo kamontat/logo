@@ -1,31 +1,30 @@
-.grid {
-  @apply flex flex-row flex-wrap items-center justify-center flex-wrap;
-  @apply w-full;
-  @apply mt-5;
+.gridLayout {
+  @apply grid grid-cols-1 gap-4;
+  @apply w-full mt-5;
 
   max-width: 1200px;
 }
 
 @screen sm {
-  .grid {
-    @apply flex-col;
+  .gridLayout {
+    @apply grid-cols-1;
   }
 }
 
 @screen md {
-  .grid {
-    @apply flex-row;
+  .gridLayout {
+    @apply grid-cols-2;
   }
 }
 
 @screen lg {
-  .grid {
-    @apply flex-row;
+  .gridLayout {
+    @apply grid-cols-3;
   }
 }
 
 @screen xl {
-  .grid {
-    @apply flex-row;
+  .gridLayout {
+    @apply grid-cols-4;
   }
 }

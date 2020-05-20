@@ -1,10 +1,44 @@
 {
   "images": [
     {
-      "key": "0001",
-      "name": "KC logo",
+      "code": "001010",
+      "ext": "svg",
+      "tags": ["round", "colorful", "primary"]
+    },
+    {
+      "code": "001001",
       "ext": "png",
-      "tags": ["kc", ""]
+      "tags": ["round", "colorful", "primary"]
+    },
+    {
+      "code": "001002",
+      "ext": "png",
+      "tags": ["round", "colorful", "primary"]
+    },
+    {
+      "code": "001003",
+      "ext": "png",
+      "tags": ["round", "colorful", "primary"]
+    },
+    {
+      "code": "001004",
+      "ext": "png",
+      "tags": ["round", "colorful", "primary"]
+    },
+    {
+      "code": "001005",
+      "ext": "png",
+      "tags": ["round", "colorful", "primary"]
+    },
+    {
+      "code": "001006",
+      "ext": "png",
+      "tags": ["round", "colorful", "primary"]
+    },
+    {
+      "code": "001007",
+      "ext": "png",
+      "tags": ["round", "colorful", "primary"]
     }
   ]
 }

@@ -3,11 +3,18 @@ import { NameResult } from "./ntc";
 
 export type RGB = [number, number, number];
 
+export interface ImageSize {
+  width: number;
+  height: number;
+}
+
 export interface RawMetaImage {
-  key: string;
-  name: string;
+  code: string;
   ext: string;
   tags: string[];
+  size?: ImageSize;
+  color?: string;
+  palette?: string[];
 }
 
 export interface RawMetaDataJson {
@@ -16,25 +23,24 @@ export interface RawMetaDataJson {
 }
 
 export type MetaPromiseData = Promise<{
-  name: string;
-  jimp: Jimp;
-  color: RGB;
-  palette: RGB[];
+  filename: string;
+  ext: string;
+  size?: ImageSize;
+  jimp?: Jimp;
+  color?: RGB;
+  rawColor?: string;
+  palette?: RGB[];
+  rawPalette?: string[];
   tags: string[];
   path: string;
 }>;
-
-export interface ImageSize {
-  width: number;
-  height: number;
-}
 
 export interface ImageMetadata {
   mime: string;
 }
 
 export interface Images {
-  name: string;
+  filename: string;
   path: string;
   size: ImageSize;
   ext: string;

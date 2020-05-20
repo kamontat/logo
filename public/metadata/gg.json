@@ -1,8 +1,7 @@
 {
   "images": [
     {
-      "key": "0001",
-      "name": "GoogleAholic Logo",
+      "code": "0001",
       "ext": "jpg",
       "tags": ["googleaholic", "v1"]
     }

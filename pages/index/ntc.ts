@@ -41,6 +41,15 @@ export interface NameResult {
   raw: string;
 }
 
+export const ntcToName = (name: string, hex?: string): NameResult => {
+  return {
+    valid: true,
+    name: name,
+    hex: hex ?? name,
+    raw: hex ?? name,
+  };
+};
+
 export class NTC {
   private resources: Resource[];
 
