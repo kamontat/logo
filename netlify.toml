@@ -5,4 +5,4 @@
   publish = "out"
 
   # Default build command.
-  command = "yarn export"
+  command = "yarn generator"
