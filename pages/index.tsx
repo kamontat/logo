@@ -62,6 +62,7 @@ export const getStaticProps: GetStaticProps = async (_context) => {
 
   const filenames = fs.readdirSync(metadataDirectory);
 
+  console.log(filenames);
   const transformer = new Transformer(filenames);
   const metadataTransformer = transformer.transform(loadMetadata);
   const imagesTransformer = metadataTransformer.transform(loadImages);
