@@ -1,30 +1,6 @@
 .gridLayout {
-  @apply grid grid-cols-1 gap-4;
+  @apply flex flex-row flex-wrap items-stretch self-auto content-start justify-center;
   @apply w-full mt-5;
 
-  max-width: 1200px;
-}
-
-@screen sm {
-  .gridLayout {
-    @apply grid-cols-1;
-  }
-}
-
-@screen md {
-  .gridLayout {
-    @apply grid-cols-2;
-  }
-}
-
-@screen lg {
-  .gridLayout {
-    @apply grid-cols-3;
-  }
-}
-
-@screen xl {
-  .gridLayout {
-    @apply grid-cols-4;
-  }
+  max-width: 1500px;
 }

@@ -1,8 +1,12 @@
 import path from "path";
 import fs from "fs";
+
 import Jimp from "jimp";
 import colorthief from "colorthief";
 
+import { useState, useEffect } from "react";
+
+import { GetStaticProps } from "next";
 import Head from "next/head";
 
 import Header from "components/header";
@@ -11,8 +15,9 @@ import Grid from "components/grid";
 import Card from "components/card";
 import Footer from "components/footer";
 
-import { RawMetaDataJson, Images, MetaPromiseData, RGB } from "./index/types";
-import { NTC, ntcToName } from "./index/ntc";
+import { RawMetaDataJson, Images, MetaPromiseData, RGB } from "src/index/types";
+import { NTC, ntcToName } from "src/index/ntc";
+import { Search } from "src/index/search";
 
 const toHex = (rgb: RGB) => {
   const hex = rgb.map((x) => {
@@ -27,20 +32,33 @@ interface HomeProps {
   images: Images[];
 }
 
+const searcher = new Search();
 export default function Home(props: HomeProps) {
+  searcher.add(props.images);
+
+  const [search, setSearch] = useState("");
+  const [images, setImages] = useState(props.images);
+  // const router = useRouter();
+  // console.log(router.query);
+
+  useEffect(() => {
+    if (search === "") setImages(props.images);
+    else setImages(searcher.search(search));
+  }, [search]);
+
   return (
     <div className="root">
       <Head>
-        <title>@kamontat/logo</title>
+        <title>@kamontat/logo ({images.length})</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header></Header>
+      <Header size={images.length} onSearch={setSearch}></Header>
 
       <Main>
         <Grid>
-          {props.images.map((image, index) => {
-            return <Card key={index} {...image}></Card>;
+          {images.map((image, index) => {
+            return <Card key={index} {...image} filtering={search}></Card>;
           })}
         </Grid>
       </Main>
@@ -50,7 +68,7 @@ export default function Home(props: HomeProps) {
   );
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async (_context) => {
   const ntc = new NTC(false);
 
   const imageDirectory = path.join(process.cwd(), "public", "images");
@@ -66,28 +84,29 @@ export async function getStaticProps() {
 
     // transform image to jimp object
     const images: MetaPromiseData[] = json.images.map(async (v) => {
-      const imageName = `${key}-${v.code}.${v.ext}`;
-      const ipath = path.join(imageDirectory, imageName);
+      const imageName = `${v.code}.${v.ext}`;
+      const ipath = path.join("images", key, imageName);
+      const fullipath = path.join(imageDirectory, key, imageName);
 
-      const exist = fs.existsSync(ipath);
+      const exist = fs.existsSync(fullipath);
       if (!exist) {
-        console.log(`cannot found ${ipath}`);
+        console.log(`cannot found ${fullipath}`);
         return undefined;
       }
 
       let jimp = undefined;
       if (v.ext !== "svg") {
-        jimp = await Jimp.read(ipath);
+        jimp = await Jimp.read(fullipath);
       }
 
       let color: RGB = undefined;
       let palette: RGB[] = undefined;
       if (v.ext !== "svg") {
-        color = await colorthief.getColor(ipath);
-        palette = await colorthief.getPalette(ipath);
+        color = await colorthief.getColor(fullipath);
+        palette = await colorthief.getPalette(fullipath);
       }
 
-      const tags = v.tags.concat(key, v.code, v.ext);
+      // const tags = v.tags.concat(key, v.code, v.ext);
 
       return {
         filename: imageName,
@@ -98,8 +117,8 @@ export async function getStaticProps() {
         rawColor: v.color,
         palette,
         rawPalette: v.palette,
-        tags: tags,
-        path: `images/${imageName}`,
+        tags: v.tags,
+        path: ipath,
       };
     });
 
@@ -120,7 +139,10 @@ export async function getStaticProps() {
       const color = data.color === undefined ? color1 : ntc.name(toHex(data.color));
 
       const palette1 = (data.rawPalette ?? []).map((v) => ntcToName(v));
-      const palette = data.palette === undefined ? palette1 : data.palette.map((v) => ntc.name(toHex(v)));
+      const palette =
+        data.palette === undefined
+          ? palette1
+          : data.palette.map((v) => ntc.name(toHex([v[0] - 1, v[1] - 1, v[2] - 1])));
 
       return {
         filename: data.filename,
@@ -130,15 +152,13 @@ export async function getStaticProps() {
         metadata: { mime },
         ext,
         color,
-        palette,
+        palette: palette.slice(0, 7),
       };
     });
-
-  // console.log(images);
 
   return {
     props: {
       images,
     },
   };
-}
+};

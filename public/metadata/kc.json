@@ -3,42 +3,222 @@
     {
       "code": "001010",
       "ext": "svg",
-      "tags": ["round", "colorful", "primary"]
+      "tags": ["round", "text-colorful", "bg-primary", "v1"],
+      "size": {
+        "width": 512,
+        "height": 512
+      }
     },
     {
       "code": "001001",
       "ext": "png",
-      "tags": ["round", "colorful", "primary"]
+      "tags": ["round", "text-colorful", "bg-primary", "v1"]
     },
     {
       "code": "001002",
       "ext": "png",
-      "tags": ["round", "colorful", "primary"]
+      "tags": ["round", "text-colorful", "bg-primary", "v1"]
     },
     {
       "code": "001003",
       "ext": "png",
-      "tags": ["round", "colorful", "primary"]
+      "tags": ["round", "text-colorful", "bg-primary", "v1"]
     },
     {
       "code": "001004",
       "ext": "png",
-      "tags": ["round", "colorful", "primary"]
+      "tags": ["round", "text-colorful", "bg-primary", "v1"]
     },
     {
       "code": "001005",
       "ext": "png",
-      "tags": ["round", "colorful", "primary"]
+      "tags": ["round", "text-colorful", "bg-primary", "v1"]
     },
     {
       "code": "001006",
       "ext": "png",
-      "tags": ["round", "colorful", "primary"]
+      "tags": ["round", "text-colorful", "bg-primary", "v1"]
     },
     {
       "code": "001007",
       "ext": "png",
-      "tags": ["round", "colorful", "primary"]
+      "tags": ["round", "text-colorful", "bg-primary", "v1"]
+    },
+    {
+      "code": "002010",
+      "ext": "svg",
+      "tags": ["square", "bg-black", "text-primary", "v1"],
+      "size": {
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "code": "002001",
+      "ext": "png",
+      "tags": ["square", "bg-black", "text-primary", "v1"]
+    },
+    {
+      "code": "002002",
+      "ext": "png",
+      "tags": ["square", "bg-black", "text-primary", "v1"]
+    },
+    {
+      "code": "002003",
+      "ext": "png",
+      "tags": ["square", "bg-black", "text-primary", "v1"]
+    },
+    {
+      "code": "002004",
+      "ext": "png",
+      "tags": ["square", "bg-black", "text-primary", "v1"]
+    },
+    {
+      "code": "002005",
+      "ext": "png",
+      "tags": ["square", "bg-black", "text-primary", "v1"]
+    },
+    {
+      "code": "002006",
+      "ext": "png",
+      "tags": ["square", "bg-black", "text-primary", "v1"]
+    },
+    {
+      "code": "002007",
+      "ext": "png",
+      "tags": ["square", "bg-black", "text-primary", "v1"]
+    },
+    {
+      "code": "003010",
+      "ext": "svg",
+      "tags": ["round", "bg-black", "text-primary", "v1"],
+      "size": {
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "code": "003001",
+      "ext": "png",
+      "tags": ["round", "bg-black", "text-primary", "v1"]
+    },
+    {
+      "code": "003002",
+      "ext": "png",
+      "tags": ["round", "bg-black", "text-primary", "v1"]
+    },
+    {
+      "code": "003003",
+      "ext": "png",
+      "tags": ["round", "bg-black", "text-primary", "v1"]
+    },
+    {
+      "code": "003004",
+      "ext": "png",
+      "tags": ["round", "bg-black", "text-primary", "v1"]
+    },
+    {
+      "code": "003005",
+      "ext": "png",
+      "tags": ["round", "bg-black", "text-primary", "v1"]
+    },
+    {
+      "code": "003006",
+      "ext": "png",
+      "tags": ["round", "bg-black", "text-primary", "v1"]
+    },
+    {
+      "code": "003007",
+      "ext": "png",
+      "tags": ["round", "bg-black", "text-primary", "v1"]
+    },
+    {
+      "code": "004010",
+      "ext": "svg",
+      "tags": ["transparent", "text-primary", "v1"],
+      "size": {
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "code": "004001",
+      "ext": "png",
+      "tags": ["transparent", "text-primary", "v1"]
+    },
+    {
+      "code": "004002",
+      "ext": "png",
+      "tags": ["transparent", "text-primary", "v1"]
+    },
+    {
+      "code": "004003",
+      "ext": "png",
+      "tags": ["transparent", "text-primary", "v1"]
+    },
+    {
+      "code": "004004",
+      "ext": "png",
+      "tags": ["transparent", "text-primary", "v1"]
+    },
+    {
+      "code": "004005",
+      "ext": "png",
+      "tags": ["transparent", "text-primary", "v1"]
+    },
+    {
+      "code": "004006",
+      "ext": "png",
+      "tags": ["transparent", "text-primary", "v1"]
+    },
+    {
+      "code": "004007",
+      "ext": "png",
+      "tags": ["transparent", "text-primary", "v1"]
+    },
+    {
+      "code": "010010",
+      "ext": "svg",
+      "tags": ["square", "bg-white", "text-primary", "text-black", "v1"],
+      "size": {
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "code": "010001",
+      "ext": "png",
+      "tags": ["square", "bg-white", "text-primary", "text-black", "v1"]
+    },
+    {
+      "code": "010002",
+      "ext": "png",
+      "tags": ["square", "bg-white", "text-primary", "text-black", "v1"]
+    },
+    {
+      "code": "010003",
+      "ext": "png",
+      "tags": ["square", "bg-white", "text-primary", "text-black", "v1"]
+    },
+    {
+      "code": "010004",
+      "ext": "png",
+      "tags": ["square", "bg-white", "text-primary", "text-black", "v1"]
+    },
+    {
+      "code": "010005",
+      "ext": "png",
+      "tags": ["square", "bg-white", "text-primary", "text-black", "v1"]
+    },
+    {
+      "code": "010006",
+      "ext": "png",
+      "tags": ["square", "bg-white", "text-primary", "text-black", "v1"]
+    },
+    {
+      "code": "010007",
+      "ext": "png",
+      "tags": ["square", "bg-white", "text-primary", "text-black", "v1"]
     }
   ]
 }

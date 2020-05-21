@@ -1,0 +1,48 @@
+{
+  "images": [
+    {
+      "code": "001010",
+      "ext": "svg",
+      "tags": ["square", "bg-black", "text-primary", "v1"],
+      "size": {
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "code": "001001",
+      "ext": "png",
+      "tags": ["square", "bg-black", "text-primary", "v1"]
+    },
+    {
+      "code": "001002",
+      "ext": "png",
+      "tags": ["square", "bg-black", "text-primary", "v1"]
+    },
+    {
+      "code": "001003",
+      "ext": "png",
+      "tags": ["square", "bg-black", "text-primary", "v1"]
+    },
+    {
+      "code": "001004",
+      "ext": "png",
+      "tags": ["square", "bg-black", "text-primary", "v1"]
+    },
+    {
+      "code": "001005",
+      "ext": "png",
+      "tags": ["square", "bg-black", "text-primary", "v1"]
+    },
+    {
+      "code": "001006",
+      "ext": "png",
+      "tags": ["square", "bg-black", "text-primary", "v1"]
+    },
+    {
+      "code": "001007",
+      "ext": "png",
+      "tags": ["square", "bg-black", "text-primary", "v1"]
+    }
+  ]
+}

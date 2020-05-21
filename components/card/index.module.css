@@ -1,11 +1,44 @@
+.root {
+  @apply w-full m-2;
+}
+
+.visible,
+.hidden {
+  overflow: hidden;
+}
+
+.visible {
+  @apply visible opacity-100;
+
+  @apply transition-opacity duration-500 ease-in-out;
+  /* transition: visible .5s ease-in-out; */
+}
+
+.hidden {
+  @apply invisible opacity-0;
+
+  border-width: 0px !important;
+
+  /* @apply transition-opacity duration-500 ease-in-out;
+  transition: visible .5s ease-in-out; */
+}
+
+.hidden>div {
+  @apply self-start;
+
+  margin-top: -10000px;
+}
+
 .card {
   @apply overflow-hidden rounded-lg border-2 border-solid border-gray-500 p-4;
   @apply flex flex-col items-center;
+  @apply w-full h-full;
 
   @apply appearance-none no-underline text-left;
   @apply bg-white;
 
-  transition: color 0.15s ease, border-color 0.15s ease;
+  @apply transition duration-200 ease-in-out;
+  /* transition: height .5s ease-in-out, width .5s ease-in-out; */
 }
 
 .card:hover,
@@ -16,29 +49,42 @@
 
 .card .img {
   @apply h-auto;
+  @apply cursor-pointer;
 
-  width: 100px;
+  width: 150px;
 }
 
 @screen sm {
   .card .img {
-    width: 100px;
+    width: 150px;
   }
 }
 
 @screen md {
+  .root {
+    @apply w-1/3;
+  }
+
   .card .img {
     width: 140px;
   }
 }
 
 @screen lg {
+  .root {
+    @apply w-1/4;
+  }
+
   .card .img {
     width: 200px;
   }
 }
 
 @screen xl {
+  .root {
+    @apply w-1/5;
+  }
+
   .card .img {
     width: 260px;
   }
@@ -60,7 +106,23 @@
   @apply px-2 py-2;
 }
 
+.card .detail .tags ul li {
+  @apply inline-block;
+}
+
 .card .detail .tag {
-  @apply inline-block bg-gray-200 rounded-full text-sm font-semibold text-gray-700;
+  @apply inline-block bg-gray-200 rounded-full text-xs font-semibold text-gray-700;
   @apply px-2 py-1 m-1;
+  @apply cursor-default;
+}
+
+.copied {
+  @apply border-gray-500 border-opacity-50 border-t;
+  @apply flex flex-row items-center justify-center;
+  @apply w-full mt-2;
+}
+
+.copiedContainer {
+  @apply font-bold font-mono text-gray-900;
+  @apply m-3;
 }
