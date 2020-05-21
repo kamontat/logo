@@ -1,6 +1,54 @@
 {
   "images": [
     {
+      "code": "101010",
+      "ext": "svg",
+      "tags": ["banner", "text-primary", "transparent", "v2"],
+      "size": {
+        "width": 2800,
+        "height": 600
+      }
+    },
+    {
+      "code": "101110",
+      "ext": "svg",
+      "tags": ["banner", "text-primary", "transparent", "text-italic", "v2"],
+      "size": {
+        "width": 2160,
+        "height": 1080
+      }
+    },
+    {
+      "code": "101001",
+      "ext": "png",
+      "tags": ["banner", "text-primary", "transparent", "v2"]
+    },
+    {
+      "code": "101002",
+      "ext": "png",
+      "tags": ["banner", "text-primary", "transparent", "v2"]
+    },
+    {
+      "code": "101003",
+      "ext": "png",
+      "tags": ["banner", "text-primary", "transparent", "v2"]
+    },
+    {
+      "code": "101101",
+      "ext": "png",
+      "tags": ["banner", "text-primary", "transparent", "text-italic", "v2"]
+    },
+    {
+      "code": "101102",
+      "ext": "png",
+      "tags": ["banner", "text-primary", "transparent", "text-italic", "v2"]
+    },
+    {
+      "code": "101103",
+      "ext": "png",
+      "tags": ["banner", "text-primary", "transparent", "text-italic", "v2"]
+    },
+    {
       "code": "001010",
       "ext": "svg",
       "tags": ["square", "bg-black", "text-primary", "v1"],
@@ -43,6 +91,358 @@
       "code": "001007",
       "ext": "png",
       "tags": ["square", "bg-black", "text-primary", "v1"]
+    },
+    {
+      "code": "002010",
+      "ext": "svg",
+      "tags": ["round", "bg-black", "text-primary", "v1"],
+      "size": {
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "code": "002001",
+      "ext": "png",
+      "tags": ["round", "bg-black", "text-primary", "v1"]
+    },
+    {
+      "code": "002002",
+      "ext": "png",
+      "tags": ["round", "bg-black", "text-primary", "v1"]
+    },
+    {
+      "code": "002003",
+      "ext": "png",
+      "tags": ["round", "bg-black", "text-primary", "v1"]
+    },
+    {
+      "code": "002004",
+      "ext": "png",
+      "tags": ["round", "bg-black", "text-primary", "v1"]
+    },
+    {
+      "code": "002005",
+      "ext": "png",
+      "tags": ["round", "bg-black", "text-primary", "v1"]
+    },
+    {
+      "code": "002006",
+      "ext": "png",
+      "tags": ["round", "bg-black", "text-primary", "v1"]
+    },
+    {
+      "code": "002007",
+      "ext": "png",
+      "tags": ["round", "bg-black", "text-primary", "v1"]
+    },
+    {
+      "code": "004010",
+      "ext": "svg",
+      "tags": ["transparent", "text-white", "v1"],
+      "size": {
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "code": "004001",
+      "ext": "png",
+      "tags": ["transparent", "text-white", "v1"]
+    },
+    {
+      "code": "004002",
+      "ext": "png",
+      "tags": ["transparent", "text-white", "v1"]
+    },
+    {
+      "code": "004003",
+      "ext": "png",
+      "tags": ["transparent", "text-white", "v1"]
+    },
+    {
+      "code": "004004",
+      "ext": "png",
+      "tags": ["transparent", "text-white", "v1"]
+    },
+    {
+      "code": "004005",
+      "ext": "png",
+      "tags": ["transparent", "text-white", "v1"]
+    },
+    {
+      "code": "004006",
+      "ext": "png",
+      "tags": ["transparent", "text-white", "v1"]
+    },
+    {
+      "code": "004007",
+      "ext": "png",
+      "tags": ["transparent", "text-white", "v1"]
+    },
+    {
+      "code": "005010",
+      "ext": "svg",
+      "tags": ["round", "bg-white", "text-primary", "v1"],
+      "size": {
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "code": "005001",
+      "ext": "png",
+      "tags": ["round", "bg-white", "text-primary", "v1"]
+    },
+    {
+      "code": "005002",
+      "ext": "png",
+      "tags": ["round", "bg-white", "text-primary", "v1"]
+    },
+    {
+      "code": "005003",
+      "ext": "png",
+      "tags": ["round", "bg-white", "text-primary", "v1"]
+    },
+    {
+      "code": "005004",
+      "ext": "png",
+      "tags": ["round", "bg-white", "text-primary", "v1"]
+    },
+    {
+      "code": "005005",
+      "ext": "png",
+      "tags": ["round", "bg-white", "text-primary", "v1"]
+    },
+    {
+      "code": "005006",
+      "ext": "png",
+      "tags": ["round", "bg-white", "text-primary", "v1"]
+    },
+    {
+      "code": "005007",
+      "ext": "png",
+      "tags": ["round", "bg-white", "text-primary", "v1"]
+    },
+    {
+      "code": "006010",
+      "ext": "svg",
+      "tags": ["round", "bg-white", "text-primary", "text-black", "v1"],
+      "size": {
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "code": "006001",
+      "ext": "png",
+      "tags": ["round", "bg-white", "text-primary", "text-black", "v1"]
+    },
+    {
+      "code": "006002",
+      "ext": "png",
+      "tags": ["round", "bg-white", "text-primary", "text-black", "v1"]
+    },
+    {
+      "code": "006003",
+      "ext": "png",
+      "tags": ["round", "bg-white", "text-primary", "text-black", "v1"]
+    },
+    {
+      "code": "006004",
+      "ext": "png",
+      "tags": ["round", "bg-white", "text-primary", "text-black", "v1"]
+    },
+    {
+      "code": "006005",
+      "ext": "png",
+      "tags": ["round", "bg-white", "text-primary", "text-black", "v1"]
+    },
+    {
+      "code": "006006",
+      "ext": "png",
+      "tags": ["round", "bg-white", "text-primary", "text-black", "v1"]
+    },
+    {
+      "code": "006007",
+      "ext": "png",
+      "tags": ["round", "bg-white", "text-primary", "text-black", "v1"]
+    },
+    {
+      "code": "007010",
+      "ext": "svg",
+      "tags": ["transparent", "text-black", "v1"],
+      "size": {
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "code": "007001",
+      "ext": "png",
+      "tags": ["transparent", "text-black", "v1"]
+    },
+    {
+      "code": "007002",
+      "ext": "png",
+      "tags": ["transparent", "text-black", "v1"]
+    },
+    {
+      "code": "007003",
+      "ext": "png",
+      "tags": ["transparent", "text-black", "v1"]
+    },
+    {
+      "code": "007004",
+      "ext": "png",
+      "tags": ["transparent", "text-black", "v1"]
+    },
+    {
+      "code": "007005",
+      "ext": "png",
+      "tags": ["transparent", "text-black", "v1"]
+    },
+    {
+      "code": "007006",
+      "ext": "png",
+      "tags": ["transparent", "text-black", "v1"]
+    },
+    {
+      "code": "007007",
+      "ext": "png",
+      "tags": ["transparent", "text-black", "v1"]
+    },
+    {
+      "code": "008010",
+      "ext": "svg",
+      "tags": ["square", "bg-primary", "text-white", "text-black", "v1"],
+      "size": {
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "code": "008001",
+      "ext": "png",
+      "tags": ["square", "bg-primary", "text-white", "text-black", "v1"]
+    },
+    {
+      "code": "008002",
+      "ext": "png",
+      "tags": ["square", "bg-primary", "text-white", "text-black", "v1"]
+    },
+    {
+      "code": "008003",
+      "ext": "png",
+      "tags": ["square", "bg-primary", "text-white", "text-black", "v1"]
+    },
+    {
+      "code": "008004",
+      "ext": "png",
+      "tags": ["square", "bg-primary", "text-white", "text-black", "v1"]
+    },
+    {
+      "code": "008005",
+      "ext": "png",
+      "tags": ["square", "bg-primary", "text-white", "text-black", "v1"]
+    },
+    {
+      "code": "008006",
+      "ext": "png",
+      "tags": ["square", "bg-primary", "text-white", "text-black", "v1"]
+    },
+    {
+      "code": "008007",
+      "ext": "png",
+      "tags": ["square", "bg-primary", "text-white", "text-black", "v1"]
+    },
+    {
+      "code": "009010",
+      "ext": "svg",
+      "tags": ["v1"],
+      "size": {
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "code": "009001",
+      "ext": "png",
+      "tags": ["v1"]
+    },
+    {
+      "code": "009002",
+      "ext": "png",
+      "tags": ["v1"]
+    },
+    {
+      "code": "009003",
+      "ext": "png",
+      "tags": ["v1"]
+    },
+    {
+      "code": "009004",
+      "ext": "png",
+      "tags": ["v1"]
+    },
+    {
+      "code": "009005",
+      "ext": "png",
+      "tags": ["v1"]
+    },
+    {
+      "code": "009006",
+      "ext": "png",
+      "tags": ["v1"]
+    },
+    {
+      "code": "009007",
+      "ext": "png",
+      "tags": ["v1"]
+    },
+    {
+      "code": "010010",
+      "ext": "svg",
+      "tags": ["v1"],
+      "size": {
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "code": "010001",
+      "ext": "png",
+      "tags": ["v1"]
+    },
+    {
+      "code": "010002",
+      "ext": "png",
+      "tags": ["v1"]
+    },
+    {
+      "code": "010003",
+      "ext": "png",
+      "tags": ["v1"]
+    },
+    {
+      "code": "010004",
+      "ext": "png",
+      "tags": ["v1"]
+    },
+    {
+      "code": "010005",
+      "ext": "png",
+      "tags": ["v1"]
+    },
+    {
+      "code": "010006",
+      "ext": "png",
+      "tags": ["v1"]
+    },
+    {
+      "code": "010007",
+      "ext": "png",
+      "tags": ["v1"]
     }
   ]
 }

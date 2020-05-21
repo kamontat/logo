@@ -47,9 +47,11 @@ export default function Card(_props: Extra) {
   return (
     <div className={style.root}>
       <div className={style.card}>
-        <a onClick={copyPath(root + props.urlpath, isCopied)}>
-          <img className={style.img} src={props.urlpath} alt={props.filename}></img>
-        </a>
+        <div className={style.imgContainer}>
+          <a onClick={copyPath(root + props.urlpath, isCopied)}>
+            <img className={style.img} src={props.urlpath} alt={props.filename}></img>
+          </a>
+        </div>
         <div className={style.detail}>
           <h1 className={style.title}>
             {props.filename} ({props.size.width}x{props.size.height})

@@ -54,6 +54,12 @@
   width: 150px;
 }
 
+.card .imgContainer {
+  @apply flex flex-row items-center justify-center;
+
+  min-height: 200px;
+}
+
 @screen sm {
   .card .img {
     width: 150px;
