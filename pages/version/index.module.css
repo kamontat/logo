@@ -1,0 +1,7 @@
+.container {
+  @apply mx-4 mt-3;
+}
+
+.title {
+  @apply text-xl font-mono font-bold;
+}
