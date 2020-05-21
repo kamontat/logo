@@ -3,6 +3,7 @@ import style from "./index.module.css";
 
 import { Images } from "src/index/types";
 import { useState, Dispatch, SetStateAction } from "react";
+import { NameResult } from "src/index/ntc";
 
 const copyPath = (text: string, isCopied: Dispatch<SetStateAction<boolean>>) => {
   return () => {
@@ -18,6 +19,13 @@ const copyPath = (text: string, isCopied: Dispatch<SetStateAction<boolean>>) => 
 
     setTimeout(() => isCopied(false), 1000);
   };
+};
+
+const unique = (list: Array<NameResult>) => {
+  const seen = {};
+  return list.filter(function (item) {
+    return seen.hasOwnProperty(item.name) ? false : (seen[item.name] = true);
+  });
 };
 
 interface Extra {
@@ -59,7 +67,7 @@ export default function Card(props: Images & Extra) {
                   <a>{props.color.name}</a>
                 </li>
               )} */}
-              {props.palette.map((result, index) => {
+              {unique(props.palette).map((result, index) => {
                 return (
                   <li key={index} itemType="palette" className={style.tag}>
                     <a>{result.name}</a>
