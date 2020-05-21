@@ -1,6 +1,6 @@
 import * as JsSearch from "js-search";
 import stemmer from "stemmer";
-import { Images } from "./types";
+import { ImagesMetadata } from "./transform/loadImagesMetadata";
 
 export class Search {
   private searcher: JsSearch.Search;
@@ -10,20 +10,22 @@ export class Search {
     this.searcher.tokenizer = new JsSearch.StemmingTokenizer(stemmer, new JsSearch.SimpleTokenizer());
     this.searcher.indexStrategy = new JsSearch.AllSubstringsIndexStrategy();
 
+    this.searcher.addIndex("key");
+    this.searcher.addIndex("code");
+    this.searcher.addIndex("mime");
     this.searcher.addIndex(["size", "width"]);
     this.searcher.addIndex(["size", "height"]);
-    this.searcher.addIndex("ext");
     this.searcher.addIndex("tags");
-    this.searcher.addIndex(["metadata", "mime"]);
+
     this.searcher.addIndex(["color", "name"]);
     this.searcher.addIndex(["color", "hex"]);
   }
 
-  add(images: Images[]) {
+  add(images: ImagesMetadata[]) {
     this.searcher.addDocuments(images);
   }
 
   search(query: string) {
-    return this.searcher.search(query) as Images[];
+    return this.searcher.search(query) as ImagesMetadata[];
   }
 }

@@ -1,9 +1,9 @@
 import include from "classnames";
 import style from "./index.module.css";
 
-import { Images } from "src/index/types";
 import { useState, Dispatch, SetStateAction } from "react";
 import { NameResult } from "src/index/ntc";
+import { ImagesMetadata } from "src/index/transform/loadImagesMetadata";
 
 const copyPath = (text: string, isCopied: Dispatch<SetStateAction<boolean>>) => {
   return () => {
@@ -29,10 +29,12 @@ const unique = (list: Array<NameResult>) => {
 };
 
 interface Extra {
-  filtering: string;
+  images: ImagesMetadata;
 }
 
-export default function Card(props: Images & Extra) {
+export default function Card(_props: Extra) {
+  const props = _props.images;
+
   const [copy, isCopied] = useState(false);
 
   const root = process.browser ? window.location.href : "";
@@ -45,8 +47,8 @@ export default function Card(props: Images & Extra) {
   return (
     <div className={style.root}>
       <div className={style.card}>
-        <a onClick={copyPath(root + props.path, isCopied)}>
-          <img className={style.img} src={props.path} alt={props.filename}></img>
+        <a onClick={copyPath(root + props.urlpath, isCopied)}>
+          <img className={style.img} src={props.urlpath} alt={props.filename}></img>
         </a>
         <div className={style.detail}>
           <h1 className={style.title}>
@@ -54,6 +56,10 @@ export default function Card(props: Images & Extra) {
           </h1>
           <div className={style.tags}>
             <ul>
+              <li itemType="key" className={style.tag}>
+                <a>{props.key}</a>
+              </li>
+
               {props.tags.map((text, index) => {
                 return (
                   <li key={index} itemType="tags" className={style.tag}>
@@ -61,12 +67,6 @@ export default function Card(props: Images & Extra) {
                   </li>
                 );
               })}
-
-              {/* {props.color.name && (
-                <li key="color" itemType="color" className={style.tag}>
-                  <a>{props.color.name}</a>
-                </li>
-              )} */}
               {unique(props.palette).map((result, index) => {
                 return (
                   <li key={index} itemType="palette" className={style.tag}>
@@ -74,13 +74,6 @@ export default function Card(props: Images & Extra) {
                   </li>
                 );
               })}
-
-              {/* <li key="width" itemType="width" className={style.tag}>
-                <a>W{props.size.width}px</a>
-              </li>
-              <li key="height" itemType="height" className={style.tag}>
-                <a>H{props.size.height}px</a>
-              </li> */}
             </ul>
           </div>
         </div>
