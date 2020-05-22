@@ -35,6 +35,7 @@ export const loadMetadata: TransformerFn<Filenames, Promise<Metadata[]>> = (t) =
   const metadataDirectory = path.join(publicDirectory, "metadata");
 
   return new Promise<Metadata[]>((res) => {
+    console.log(t);
     const result = t.flatMap((filename) => {
       const key = path.basename(filename, ".json");
 
