@@ -15,24 +15,26 @@ export const loadImages: TransformerFn<Metadata[], Promise<ImageMetadata[]>> = (
   return new Promise<ImageMetadata[]>((res) => {
     const result: ImageMetadata[] = metas.flatMap((meta) => {
       return meta.raw.images
-        .map((v) => {
-          const filename = `${v.code}.${v.ext}`;
+        .flatMap((v) => {
+          const codes = typeof v.code === "string" ? [v.code] : v.code;
+          return codes.map((code) => {
+            const filename = `${code}.${v.ext}`;
+            const urlpath = path.join(meta.rpath, filename);
+            const fpath = path.join(meta.ipath, filename);
 
-          const urlpath = path.join(meta.rpath, filename);
-          const fpath = path.join(meta.ipath, filename);
+            if (!fs.existsSync(fpath)) {
+              console.error(`file not found: ${fpath}`);
+              return undefined;
+            }
 
-          if (!fs.existsSync(fpath)) {
-            console.error(`file not found: ${fpath}`);
-            return undefined;
-          }
-
-          return {
-            key: meta.key,
-            fpath,
-            urlpath,
-            filename,
-            ...v,
-          };
+            return {
+              key: meta.key,
+              fpath,
+              urlpath,
+              filename,
+              ...v,
+            };
+          });
         })
         .filter((v) => v !== undefined);
     });

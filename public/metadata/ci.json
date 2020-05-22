@@ -1,0 +1,14 @@
+{
+  "images": [
+    {
+      "code": "001",
+      "ext": "png",
+      "tags": ["colors", "board", "v1", "dark"]
+    },
+    {
+      "code": "002",
+      "ext": "png",
+      "tags": ["colors", "board", "v1", "light"]
+    }
+  ]
+}

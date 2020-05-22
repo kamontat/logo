@@ -7,7 +7,7 @@ import { ImageSize } from "../types";
 type Filenames = string[];
 
 export interface RawImagedata {
-  code: string;
+  code: string | string[];
   ext: string;
   tags: string[];
   size?: ImageSize;

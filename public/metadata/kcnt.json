@@ -1,6 +1,20 @@
 {
   "images": [
     {
+      "code": "110010",
+      "ext": "svg",
+      "tags": ["v2", "bg-white", "text-black", "gray-color"],
+      "size": {
+        "width": 3000,
+        "height": 3000
+      }
+    },
+    {
+      "code": ["110001", "110002", "110003", "110004", "110005", "110006", "110007"],
+      "ext": "png",
+      "tags": ["v2", "bg-white", "text-black", "gray-color"]
+    },
+    {
       "code": "101010",
       "ext": "svg",
       "tags": ["banner", "text-primary", "transparent", "v2"],
@@ -19,17 +33,7 @@
       }
     },
     {
-      "code": "101001",
-      "ext": "png",
-      "tags": ["banner", "text-primary", "transparent", "v2"]
-    },
-    {
-      "code": "101002",
-      "ext": "png",
-      "tags": ["banner", "text-primary", "transparent", "v2"]
-    },
-    {
-      "code": "101003",
+      "code": ["101001", "101002", "101003"],
       "ext": "png",
       "tags": ["banner", "text-primary", "transparent", "v2"]
     },
