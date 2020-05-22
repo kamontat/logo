@@ -1,0 +1,178 @@
+.separator {
+  @apply w-full border border-gray-500 m-2;
+}
+
+.modal {
+  @apply fixed top-0 left-0;
+  @apply w-full h-full;
+
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.modal>.main.container {
+  @apply fixed;
+  @apply overflow-y-scroll;
+
+  @apply p-5 bg-white;
+  @apply rounded-md border border-gray-300 shadow-md;
+
+  @apply w-full h-full;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+.visible,
+.invisible {
+  overflow: hidden;
+}
+
+.visible {
+  @apply opacity-100 visible;
+}
+
+.invisible {
+  @apply opacity-0 invisible;
+  @apply transition-opacity duration-500 ease-in-out;
+
+  display: none;
+  border-width: 0px !important;
+}
+
+.invisible>div {
+  @apply self-start;
+
+  margin-top: -10000px;
+}
+
+svg.icon {
+  @apply fill-current w-4 h-4 mr-2;
+}
+
+.imageContainer {
+  @apply flex flex-col items-center justify-center my-2;
+}
+
+.imageContainer img {
+  @apply h-auto;
+  @apply cursor-default;
+
+  min-width: 150px;
+}
+
+@screen md {
+  .modal>.main.container {
+    width: 80%;
+    height: 80%;
+
+    max-height: 700px;
+    max-width: 900px;
+  }
+
+  .imageContainer img {
+    width: 200px;
+  }
+}
+
+@screen lg {
+  .modal>.main.container {
+    width: 70%;
+    height: 70%;
+
+    max-height: 800px;
+    max-width: 700px;
+  }
+
+  .imageContainer img {
+    width: 250px;
+  }
+}
+
+.bodyContainer {
+  @apply overflow-scroll;
+}
+
+.titleContainer {
+  @apply px-5 py-3;
+}
+
+.titleContainer .metadata {
+  @apply grid grid-cols-2 row-gap-1 col-gap-3;
+}
+
+.titleContainer .metadata span {
+  @apply inline-flex items-center justify-center;
+}
+
+.titleContainer .metadata span.lead {
+  @apply font-mono;
+  @apply text-lg font-bold;
+}
+
+.titleContainer .metadata span.key {}
+
+.titleContainer .metadata span.value {
+  @apply font-mono;
+  @apply text-sm text-blue-400;
+}
+
+.titleContainer .metadata span.value:hover {
+  @apply text-gray-800;
+}
+
+.footerContainer {
+  @apply mt-3;
+}
+
+.actionContainer {
+  @apply flex flex-row flex-grow items-center justify-around;
+  @apply mt-3;
+}
+
+.actionContainer .button {
+  @apply inline-flex items-center py-2 px-4;
+  @apply font-bold;
+}
+
+.actionContainer .button.primary {
+  @apply bg-transparent text-gray-800;
+  @apply rounded border border-blue-500;
+}
+
+.actionContainer .button.primary:hover {
+  @apply bg-blue-500 text-white border-transparent;
+}
+
+.actionContainer .button.secondary {
+  @apply bg-transparent text-gray-800;
+  @apply rounded border border-teal-400;
+}
+
+.actionContainer .button.secondary:hover {
+  @apply bg-teal-400 text-white border-transparent;
+}
+
+.actionContainer .button.cancellation {
+  @apply bg-transparent text-gray-800;
+  @apply rounded border border-red-500;
+}
+
+.actionContainer .button.cancellation:hover {
+  @apply bg-red-500 text-white border-transparent;
+}
+
+.notification {
+  @apply border-gray-500 border-opacity-50 border-t;
+  @apply flex flex-row items-center justify-center;
+  @apply w-full mt-4;
+}
+
+.notification>.container {
+  @apply inline-flex items-center;
+
+  @apply font-bold font-mono text-gray-900;
+  @apply m-3;
+}

@@ -6,6 +6,10 @@ import { TransformerFn } from "../transformer";
 import { RGB, ImageSize } from "../types";
 import { NTC, ntcToName, NameResult } from "../ntc";
 
+// ------------------------------------- //
+// 3. query all data from image          //
+// ------------------------------------- //
+
 const supportedImages = ["png", "jpg", "jpag"];
 const ntc = new NTC(false);
 

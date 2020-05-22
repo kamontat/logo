@@ -1,4 +1,4 @@
-.mainContainer {
+.container {
   @apply flex flex-col flex-1;
   @apply w-full px-3 py-0;
 }

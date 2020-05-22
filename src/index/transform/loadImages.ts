@@ -4,7 +4,12 @@ import fs from "fs";
 import { TransformerFn } from "../transformer";
 import { Metadata, RawImagedata } from "./loadMetadata";
 
+// ------------------------------------- //
+// 2. Load image path from file system   //
+// ------------------------------------- //
+
 export interface ImageMetadata extends RawImagedata {
+  code: string;
   key: string;
   fpath: string;
   urlpath: string;
@@ -33,6 +38,7 @@ export const loadImages: TransformerFn<Metadata[], Promise<ImageMetadata[]>> = (
               urlpath,
               filename,
               ...v,
+              code: code,
             };
           });
         })

@@ -4,6 +4,10 @@ import fs from "fs";
 import { TransformerFn } from "../transformer";
 import { ImageSize } from "../types";
 
+// ------------------------------------- //
+// 1. Load metadata json from filesystem //
+// ------------------------------------- //
+
 type Filenames = string[];
 
 export interface RawImagedata {

@@ -1,0 +1,13 @@
+.tags {
+  @apply px-2 py-2;
+}
+
+.tags ul li {
+  @apply inline-block;
+}
+
+.tag {
+  @apply inline-block bg-gray-200 rounded-full text-xs font-semibold text-gray-700;
+  @apply px-2 py-1 m-1;
+  @apply cursor-default;
+}

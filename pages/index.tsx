@@ -11,10 +11,11 @@ import Main from "components/main";
 import Grid from "components/grid";
 import Card from "components/card";
 import Footer from "components/footer";
+import Modal from "components/modal";
 
 import { Search } from "src/index/search";
-import { Transformer } from "src/index/transformer";
 
+import { Transformer } from "src/index/transformer";
 import { loadMetadata } from "src/index/transform/loadMetadata";
 import { loadImages } from "src/index/transform/loadImages";
 import { loadImagesMetadata, ImagesMetadata } from "src/index/transform/loadImagesMetadata";
@@ -29,6 +30,8 @@ export default function Home(props: HomeProps) {
 
   const [search, setSearch] = useState("");
   const [images, setImages] = useState(props.images);
+  const [image, setImage] = useState(props.images[0]);
+  const [modalShow, isModalShow] = useState(false);
 
   useEffect(() => {
     if (search === "") setImages(props.images);
@@ -44,10 +47,12 @@ export default function Home(props: HomeProps) {
 
       <Header size={images.length} onSearch={setSearch}></Header>
 
+      <Modal show={modalShow} toggle={isModalShow} image={image}></Modal>
+
       <Main>
         <Grid>
           {images.map((image, index) => {
-            return <Card key={index} images={image}></Card>;
+            return <Card key={index} images={image} onClick={isModalShow} onSelect={setImage}></Card>;
           })}
         </Grid>
       </Main>
