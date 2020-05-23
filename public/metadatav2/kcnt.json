@@ -3,7 +3,7 @@
   "data": [
     {
       "ext": "png",
-      "tags": ["v2", "bg-white", "text-black", "gray-color"],
+      "tags": ["v2", "square", "bg-white", "text-black", "gray-color"],
       "images": [
         { "code": "110010", "ext": "svg", "size": { "width": 3000, "height": 3000 } },
         { "code": "110001" },
@@ -13,6 +13,160 @@
         { "code": "110005" },
         { "code": "110006" },
         { "code": "110007" }
+      ]
+    },
+    {
+      "ext": "png",
+      "tags": ["v2", "square", "bg-primary", "text-black"],
+      "images": [
+        { "code": "111010", "ext": "svg", "size": { "width": 3003, "height": 3003 } },
+        { "code": "111001" },
+        { "code": "111002" },
+        { "code": "111003" },
+        { "code": "111004" },
+        { "code": "111005" },
+        { "code": "111006" },
+        { "code": "111007" }
+      ]
+    },
+    {
+      "ext": "png",
+      "tags": ["v2", "square", "transparent", "text-black", "black-only"],
+      "images": [
+        { "code": "112010", "ext": "svg", "size": { "width": 3000, "height": 3000 } },
+        { "code": "112001" },
+        { "code": "112002" },
+        { "code": "112003" },
+        { "code": "112004" },
+        { "code": "112005" },
+        { "code": "112006" },
+        { "code": "112007" }
+      ]
+    },
+    {
+      "ext": "png",
+      "tags": ["v2", "square", "bg-black", "text-colorful"],
+      "images": [
+        { "code": "113010", "ext": "svg", "size": { "width": 3000, "height": 3000 } },
+        { "code": "113001" },
+        { "code": "113002" },
+        { "code": "113003" },
+        { "code": "113004" },
+        { "code": "113005" },
+        { "code": "113006" },
+        { "code": "113007" }
+      ]
+    },
+    {
+      "ext": "png",
+      "tags": ["v2", "square", "bg-white", "text-colorful"],
+      "images": [
+        { "code": "114010", "ext": "svg", "size": { "width": 3000, "height": 3000 } },
+        { "code": "114001" },
+        { "code": "114002" },
+        { "code": "114003" },
+        { "code": "114004" },
+        { "code": "114005" },
+        { "code": "114006" },
+        { "code": "114007" }
+      ]
+    },
+    {
+      "ext": "png",
+      "tags": ["v2", "square", "transparent", "text-colorful"],
+      "images": [
+        { "code": "115010", "ext": "svg", "size": { "width": 3000, "height": 3000 } },
+        { "code": "115001" },
+        { "code": "115002" },
+        { "code": "115003" },
+        { "code": "115004" },
+        { "code": "115005" },
+        { "code": "115006" },
+        { "code": "115007" }
+      ]
+    },
+    {
+      "ext": "png",
+      "tags": ["v2", "square", "bg-black", "text-primary"],
+      "images": [
+        { "code": "116010", "ext": "svg", "size": { "width": 3000, "height": 3000 } },
+        { "code": "116001" },
+        { "code": "116002" },
+        { "code": "116003" },
+        { "code": "116004" },
+        { "code": "116005" },
+        { "code": "116006" },
+        { "code": "116007" }
+      ]
+    },
+    {
+      "ext": "png",
+      "tags": ["v2", "square", "bg-white", "text-primary"],
+      "images": [
+        { "code": "117010", "ext": "svg", "size": { "width": 3000, "height": 3000 } },
+        { "code": "117001" },
+        { "code": "117002" },
+        { "code": "117003" },
+        { "code": "117004" },
+        { "code": "117005" },
+        { "code": "117006" },
+        { "code": "117007" }
+      ]
+    },
+    {
+      "ext": "png",
+      "tags": ["v2", "square", "transparent", "text-primary"],
+      "images": [
+        { "code": "118010", "ext": "svg", "size": { "width": 3000, "height": 3000 } },
+        { "code": "118001" },
+        { "code": "118002" },
+        { "code": "118003" },
+        { "code": "118004" },
+        { "code": "118005" },
+        { "code": "118006" },
+        { "code": "118007" }
+      ]
+    },
+    {
+      "ext": "png",
+      "tags": ["v2", "square", "bg-black", "text-white", "black-white"],
+      "images": [
+        { "code": "119010", "ext": "svg", "size": { "width": 3000, "height": 3000 } },
+        { "code": "119001" },
+        { "code": "119002" },
+        { "code": "119003" },
+        { "code": "119004" },
+        { "code": "119005" },
+        { "code": "119006" },
+        { "code": "119007" }
+      ]
+    },
+    {
+      "ext": "png",
+      "tags": ["v2", "square", "bg-primary", "text-white"],
+      "images": [
+        { "code": "120010", "ext": "svg", "size": { "width": 3000, "height": 3000 } },
+        { "code": "120001" },
+        { "code": "120002" },
+        { "code": "120003" },
+        { "code": "120004" },
+        { "code": "120005" },
+        { "code": "120006" },
+        { "code": "120007" }
+      ]
+    },
+    {
+      "ext": "png",
+      "tags": ["v2", "square", "transparent", "text-white"],
+      "images": [
+        { "code": "121010", "ext": "svg", "size": { "width": 3000, "height": 3000 } },
+        { "code": "121001" },
+        { "code": "121002" },
+        { "code": "121003" },
+        { "code": "121004" },
+        { "code": "121005" },
+        { "code": "121006" },
+        { "code": "121007" }
       ]
     },
     {
