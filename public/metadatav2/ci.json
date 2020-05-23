@@ -1,0 +1,13 @@
+{
+  "version": "v2",
+  "data": [
+    {
+      "ext": "png",
+      "tags": ["colors", "board", "v1"],
+      "images": [
+        { "code": "001", "tags": ["dark"] },
+        { "code": "002", "tags": ["light"] }
+      ]
+    }
+  ]
+}

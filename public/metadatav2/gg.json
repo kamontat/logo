@@ -1,5 +1,6 @@
 {
-  "images": [
+  "version": "v2",
+  "data": [
     {
       "code": "0001",
       "ext": "jpg",
