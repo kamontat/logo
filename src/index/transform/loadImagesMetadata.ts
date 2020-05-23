@@ -85,7 +85,7 @@ export const loadImagesMetadata: TransformerFn<ImageMetadata[], Promise<ImagesMe
       mime = jimp.getMIME();
       ext = jimp.getExtension();
     } else {
-      logger.w("image", `cannot auto fetch data, extension not support (${meta.ext})`);
+      logger.warn(`Extension not support (${meta.filename})`);
     }
 
     return {
