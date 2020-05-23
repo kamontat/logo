@@ -1,13 +1,14 @@
-import { useState, Dispatch, SetStateAction, MouseEvent } from "react";
+import { useState, Dispatch, SetStateAction, MouseEvent, useEffect } from "react";
+import Link from "next/link";
 
 import include from "classnames";
 import style from "./index.module.css";
 
-import { ImagesMetadata } from "src/index/transform/loadImagesMetadata";
+import { ImagesMetadata, emptyImagesMetadata } from "src/index/transform/loadImagesMetadata";
 import Tags from "components/tags";
 
 export interface Props {
-  image: ImagesMetadata;
+  image?: ImagesMetadata;
   show: boolean;
   toggle: Dispatch<SetStateAction<boolean>>;
 }
@@ -38,10 +39,15 @@ const unique = (list: string[]) => {
 };
 
 export default function Modal(props: Props) {
+  let image = props.image ?? emptyImagesMetadata();
+  useEffect(() => {
+    image = props.image ?? emptyImagesMetadata();
+  }, [props.image]);
+
   const [copy, isCopied] = useState(false);
 
   const root = process.browser ? window.location.href : "";
-  const path = root + props.image.urlpath;
+  const path = root + image.urlpath;
 
   const styles = {};
   styles[style.modal] = true;
@@ -66,9 +72,9 @@ export default function Modal(props: Props) {
   };
 
   const tags = unique(
-    [props.image.key, props.image.ext, props.image.mime, props.image.color.name.toLowerCase(), props.image.color.hex]
-      .concat(props.image.tags)
-      .concat(props.image.palette.map((p) => p.name.toLowerCase()))
+    [image.key, image.ext, image.mime, image.color.name.toLowerCase(), image.color.hex]
+      .concat(image.tags)
+      .concat(image.palette.map((p) => p.name.toLowerCase()))
   );
 
   return (
@@ -76,21 +82,21 @@ export default function Modal(props: Props) {
       <div className={include(style.main, style.container)}>
         <div className={style.imageContainer}>
           <figure>
-            <img className={style.img} src={props.image.urlpath} alt={props.image.filename}></img>
+            <img className={style.img} src={image.urlpath} alt={image.filename}></img>
           </figure>
         </div>
         <div className={style.bodyContainer}>
           <div className={style.titleContainer}>
             <div className={style.metadata}>
               <span className={style.lead}>name</span>
-              <span className={style.lead}>{props.image.filename}</span>
+              <span className={style.lead}>{image.filename}</span>
             </div>
             <div className={style.separator}></div>
             <div className={style.metadata}>
               <span className={style.key}>width</span>
               <span className={style.key}>height</span>
-              <span className={style.value}>{props.image.size.width}</span>
-              <span className={style.value}>{props.image.size.height}</span>
+              <span className={style.value}>{image.size.width}</span>
+              <span className={style.value}>{image.size.height}</span>
             </div>
           </div>
         </div>
@@ -106,7 +112,7 @@ export default function Modal(props: Props) {
             </svg>
             <span>Copy</span>
           </a>
-          <a href={path} download={props.image.filename} className={include(style.button, style.primary)}>
+          <a href={image.urlpath} download={image.filename} className={include(style.button, style.primary)}>
             <svg className={include(style.icon)} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
               <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
             </svg>

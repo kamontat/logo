@@ -5,6 +5,7 @@ import { ImageMetadata } from "./loadImages";
 import { TransformerFn } from "../transformer";
 import { RGB, ImageSize } from "../types";
 import { NTC, ntcToName, NameResult } from "../ntc";
+import { Logger } from "src/logger";
 
 // ------------------------------------- //
 // 3. query all data from image          //
@@ -37,7 +38,25 @@ export interface ImagesMetadata {
   palette: NameResult[];
 }
 
+export const emptyImagesMetadata = (): ImagesMetadata => {
+  return {
+    urlpath: "",
+    filename: "",
+    key: "",
+    code: "",
+    ext: "",
+    mime: "",
+    size: { width: 0, height: 0 },
+    tags: [],
+    color: ntcToName("", ""),
+    palette: [],
+  };
+};
+
+const logger = new Logger("transform", "loadImagesMetadata");
 export const loadImagesMetadata: TransformerFn<ImageMetadata[], Promise<ImagesMetadata[]>> = async (data) => {
+  logger.i("start", `loading images metadata`);
+
   const _images = data.map(async (meta) => {
     let color: NameResult = ntcToName(meta.color ?? "");
     if (!color.valid && supportedImages.includes(meta.ext)) {
@@ -65,6 +84,8 @@ export const loadImagesMetadata: TransformerFn<ImageMetadata[], Promise<ImagesMe
       if (height === undefined) height = jimp.getHeight();
       mime = jimp.getMIME();
       ext = jimp.getExtension();
+    } else {
+      logger.w("image", `cannot auto fetch data, extension not support (${meta.ext})`);
     }
 
     return {
@@ -86,5 +107,8 @@ export const loadImagesMetadata: TransformerFn<ImageMetadata[], Promise<ImagesMe
     };
   });
 
-  return Promise.all(_images);
+  const result = await Promise.all(_images);
+  logger.i("finish", `loaded total ${result.length} images`);
+
+  return result;
 };

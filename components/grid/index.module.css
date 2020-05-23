@@ -1,5 +1,5 @@
 .gridLayout {
-  @apply flex flex-row flex-wrap items-stretch self-auto content-start justify-center;
+  @apply flex flex-row flex-wrap items-stretch justify-evenly;
   @apply w-full mt-5;
 
   max-width: 1500px;

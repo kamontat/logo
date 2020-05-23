@@ -1,24 +1,34 @@
 import * as JsSearch from "js-search";
 import stemmer from "stemmer";
+
+import { Logger } from "src/logger";
+
 import { ImagesMetadata } from "./transform/loadImagesMetadata";
 
-export class Search {
+export class Search extends Logger {
   private searcher: JsSearch.Search;
 
   constructor() {
+    super("searcher");
+
     this.searcher = new JsSearch.Search("filename");
     this.searcher.tokenizer = new JsSearch.StemmingTokenizer(stemmer, new JsSearch.SimpleTokenizer());
     this.searcher.indexStrategy = new JsSearch.AllSubstringsIndexStrategy();
 
-    this.searcher.addIndex("key");
-    this.searcher.addIndex("code");
-    this.searcher.addIndex("mime");
-    this.searcher.addIndex(["size", "width"]);
-    this.searcher.addIndex(["size", "height"]);
-    this.searcher.addIndex("tags");
+    this.addIndex("key");
+    this.addIndex("code");
+    this.addIndex("mime");
+    this.addIndex(["size", "width"]);
+    this.addIndex(["size", "height"]);
+    this.addIndex("tags");
 
-    this.searcher.addIndex(["color", "name"]);
-    this.searcher.addIndex(["color", "hex"]);
+    this.addIndex(["color", "name"]);
+    this.addIndex(["color", "hex"]);
+  }
+
+  private addIndex(name: string | string[]) {
+    this.searcher.addIndex(name);
+    this.i("addIndex", name);
   }
 
   add(images: ImagesMetadata[]) {
