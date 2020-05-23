@@ -1,4 +1,4 @@
-// import include from "classnames";
+import include from "classnames";
 import style from "./index.module.css";
 
 export interface MainProps {
@@ -6,5 +6,5 @@ export interface MainProps {
 }
 
 export default function Main(props: MainProps) {
-  return <div className={style.mainContainer}>{props.children}</div>;
+  return <div className={include(style.main, style.container)}>{props.children}</div>;
 }
