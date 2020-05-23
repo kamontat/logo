@@ -9,6 +9,7 @@
     "generator": "next build && next export"
   },
   "dependencies": {
+    "@zeit/next-css": "1.0.1",
     "classnames": "2.2.6",
     "colorthief": "2.3.0",
     "debug": "4.1.1",

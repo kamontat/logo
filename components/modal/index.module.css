@@ -13,6 +13,8 @@
 .modal>.main.container {
   @apply fixed;
   @apply overflow-y-scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
 
   @apply p-5 bg-white;
   @apply rounded-md border border-gray-300 shadow-md;
@@ -23,6 +25,11 @@
   left: 50%;
 
   transform: translate(-50%, -50%);
+}
+
+/* Webkit */
+.modal>.main.container::-webkit-scrollbar {
+  @apply w-0 h-0;
 }
 
 .visible,
@@ -92,7 +99,7 @@ svg.icon {
 }
 
 .bodyContainer {
-  @apply overflow-scroll;
+  /* @apply overflow-scroll; */
 }
 
 .titleContainer {
