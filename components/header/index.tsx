@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, ChangeEvent, MouseEvent } from "react";
+import { Dispatch, SetStateAction, ChangeEvent } from "react";
 
 import include from "classnames";
 import style from "./index.module.css";
@@ -13,9 +13,16 @@ export default function Header(props: HeaderProps) {
     props.onSearch(event.target.value);
   };
 
+  const messageStyles = {};
+  messageStyles[style.element] = true;
+  messageStyles[style.text] = true;
+  messageStyles[style.pass] = props.size > 100;
+  messageStyles[style.warn] = props.size > 50 && props.size <= 100;
+  messageStyles[style.error] = props.size <= 50;
+
   return (
     <nav className={style.nav}>
-      <a className={include(style.logo, style.element)} href="#">
+      <a className={include(style.element, style.text, style.title)} href="#">
         Logo
       </a>
       <input
@@ -25,6 +32,7 @@ export default function Header(props: HeaderProps) {
         className={include(style.searchbar, style.element)}
         onChange={searching}
       ></input>
+      <span className={include(messageStyles)}>{props.size}</span>
     </nav>
   );
 }

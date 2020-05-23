@@ -13,8 +13,10 @@
 .modal>.main.container {
   @apply fixed;
   @apply overflow-y-scroll;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
 
   @apply p-5 bg-white;
   @apply rounded-md border border-gray-300 shadow-md;
@@ -99,7 +101,7 @@ svg.icon {
 }
 
 .bodyContainer {
-  /* @apply overflow-scroll; */
+  @apply my-1;
 }
 
 .titleContainer {
@@ -131,7 +133,7 @@ svg.icon {
 }
 
 .footerContainer {
-  @apply mt-3;
+  @apply mt-1;
 }
 
 .actionContainer {
