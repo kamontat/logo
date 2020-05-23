@@ -33,8 +33,6 @@ export const loadImages: TransformerFn<Metadata[], Promise<ImageMetadata[]>> = (
           if (!fs.existsSync(fpath)) {
             logger.e("file not found", fpath);
             return undefined;
-          } else {
-            logger.i("file found", fpath);
           }
 
           return {
