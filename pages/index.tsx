@@ -51,7 +51,7 @@ export default function Home(props: HomeProps) {
   return (
     <div className="root">
       <Head>
-        <title>@kamontat/logo ({images.length})</title>
+        <title>@kamontat/logo</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
