@@ -12,6 +12,7 @@ import Grid from "components/grid";
 import Card from "components/card";
 import Footer from "components/footer";
 import Modal from "components/modal";
+import ActionBar from "components/actionbar";
 
 import { Search } from "src/index/search";
 
@@ -55,9 +56,8 @@ export default function Home(props: HomeProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header size={images.length} onSearch={setSearch}></Header>
-
       <Modal show={modalShow} toggle={isModalShow} image={image}></Modal>
+      <Header size={images.length} onSearch={setSearch}></Header>
 
       <Main>
         <Grid>
@@ -67,6 +67,7 @@ export default function Home(props: HomeProps) {
         </Grid>
       </Main>
 
+      <ActionBar></ActionBar>
       <Footer></Footer>
     </div>
   );
