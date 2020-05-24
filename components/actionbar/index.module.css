@@ -1,0 +1,36 @@
+.actionBar.container {
+  @apply fixed;
+
+  right: 0px;
+  bottom: 0px;
+}
+
+.actionBar.container .mainContainer {
+  @apply flex flex-row items-stretch justify-around;
+  @apply m-3 p-3;
+}
+
+.actionBar.container .mainContainer>.element {
+  @apply p-2;
+}
+
+@screen md {
+  .actionBar.container .mainContainer>.element {
+    @apply p-4;
+  }
+}
+
+.actionBar.container .mainContainer>.element.button {
+  @apply rounded-full;
+  @apply bg-white text-black;
+  @apply border border-gray-800;
+}
+
+.actionBar.container .mainContainer>.element.button:hover {
+  @apply bg-blue-500 text-white;
+  @apply border-blue-500;
+}
+
+.actionBar.container .mainContainer>.element svg.icon {
+  @apply fill-current w-6 h-6;
+}
