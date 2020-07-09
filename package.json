@@ -11,7 +11,7 @@
   "dependencies": {
     "@zeit/next-css": "1.0.1",
     "classnames": "2.2.6",
-    "colorthief": "2.3.0",
+    "colorthief": "2.3.2",
     "debug": "4.1.1",
     "image-size": "0.8.3",
     "jimp": "0.14.0",
