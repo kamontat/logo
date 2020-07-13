@@ -5,9 +5,10 @@ export default function Footer() {
   return (
     <footer className={style.footer}>
       <div>
-        <h3 className={style.title}>All asset hosted on this website for personal use only</h3>
+        <h3 className={style.title}>All asset hosted on this website is for personal use only</h3>
         <h5 className={style.subtitle}>
-          Some of images had own by other company and licensed, please make sure before use.
+          However, some images might owned by other company, please make sure before use.
+          This website sourcecode hosted at <a href="https://github.com/kamontat/logo">github</a>.
         </h5>
         <div className={style.container}>
           <div className={style.leftContainer}>
