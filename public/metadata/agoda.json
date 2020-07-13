@@ -3,13 +3,23 @@
   "data": [
     {
       "ext": "png",
-      "tags": ["agoda", "logo", "v1"],
+      "tags": ["external", "logo", "v1"],
       "images": [
-        { "code": "001", "tags": ["transparent", "long"] }
+        { "code": "AG101", "tags": ["transparent"] },
+        { "code": "AG201", "tags": ["transparent"] },
+        { "code": "AG301", "tags": ["long", "transparent"] }
+      ]
+    }, {
+      "ext": "jpg",
+      "tags": ["external", "logo", "v1"],
+      "images": [
+        { "code": "AG111", "tags": ["light"] },
+        { "code": "AG211", "tags": ["dark"] },
+        { "code": "AG311", "tags": ["long", "transparent"] }
       ]
     }, {
       "ext": "png",
-      "tags": ["agoda", "emoji", "agoji", "v1"],
+      "tags": ["external", "emoji", "agoji", "v1"],
       "images": [
         { "code": "AGJ0100", "tags": ["traveling"] },
         { "code": "AGJ0105", "tags": ["hiking"] },

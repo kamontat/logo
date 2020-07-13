@@ -78,7 +78,6 @@ const replaceImageData = (oldData: StrictJsonImageData, replacement: RawJsonImag
   return newData;
 };
 
-const version = "v2";
 const logger = new Logger("transform", "loadMetadata");
 export const loadMetadata: TransformerFn<Filenames, Promise<Metadata[]>> = (t) => {
   const publicDirectory = path.join(process.cwd(), "public");
