@@ -7,6 +7,13 @@
       "images": [
         { "code": "001", "tags": ["transparent", "long"] }
       ]
+    }, {
+      "ext": "png",
+      "tags": ["agoda", "emoji", "agoji", "v1"],
+      "images": [
+        { "code": "101", "tags": ["playing"] },
+        { "code": "102", "tags": ["working"] }
+      ]
     }
   ]
 }
