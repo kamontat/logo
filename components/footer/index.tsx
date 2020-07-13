@@ -5,9 +5,10 @@ export default function Footer() {
   return (
     <footer className={style.footer}>
       <div>
-        <h3 className={style.title}>All asset hosted on this website for personal use only</h3>
+        <h3 className={style.title}>All asset hosted on this website is for personal use only</h3>
         <h5 className={style.subtitle}>
-          However, everyone can download and modify as long as you apply with following license
+          However, some images might owned by other company, please make sure before use.
+          This website sourcecode hosted at <a href="https://github.com/kamontat/logo">github</a>.
         </h5>
         <div className={style.container}>
           <div className={style.leftContainer}>
@@ -33,7 +34,7 @@ export default function Footer() {
             <div>
               <small>
                 As developer (<a href="https://github.com/kamontat">Kamontat Chantrachirathumrong</a>) I feel appreciate
-                for everyone who visit our website, Thank you and be fun
+                for everyone who visit our website, Have fun.
               </small>
             </div>
           </div>
