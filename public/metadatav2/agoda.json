@@ -11,8 +11,13 @@
       "ext": "png",
       "tags": ["agoda", "emoji", "agoji", "v1"],
       "images": [
-        { "code": "101", "tags": ["playing"] },
-        { "code": "102", "tags": ["working"] }
+        { "code": "AGJ0100", "tags": ["traveling"] },
+        { "code": "AGJ0105", "tags": ["hiking"] },
+        { "code": "AGJ0106", "tags": ["diving"] },
+        { "code": "AGJ0108", "tags": ["swimming"] },
+        { "code": "AGJ0110", "tags": ["surfing"] },
+        { "code": "AGJ0345", "tags": ["playing", "gamer"] },
+        { "code": "AGJ0513", "tags": ["working"] }
       ]
     }
   ]
