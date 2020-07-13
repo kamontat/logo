@@ -74,11 +74,14 @@ export default function Home(props: HomeProps) {
 }
 
 export const getStaticProps: GetStaticProps = async (_context) => {
+  const imageUrl = path.join("images");
+
+  const imageDirectory = path.join(process.cwd(), "public", imageUrl);
   const metadataDirectory = path.join(process.cwd(), "public", "metadata");
 
   const filenames = fs.readdirSync(metadataDirectory);
 
-  const transformer = new Transformer(filenames);
+  const transformer = new Transformer({ metadataDirectory, imageDirectory, imageUrl, filenames });
   const metadataTransformer = transformer.transform(loadMetadata);
   const imagesTransformer = metadataTransformer.transform(loadImages);
   const imagesMetadataTransformer = imagesTransformer.transform(loadImagesMetadata);

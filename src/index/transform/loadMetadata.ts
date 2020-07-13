@@ -9,7 +9,12 @@ import { Logger } from "src/logger";
 // 1. Load metadata json from filesystem //
 // ------------------------------------- //
 
-type Filenames = string[];
+type Filenames = {
+  metadataDirectory: string,
+  imageDirectory: string,
+  imageUrl: string,
+  filenames: string[]
+}
 
 export interface RawJsonImageData {
   code?: string;
@@ -78,18 +83,14 @@ const logger = new Logger("transform", "loadMetadata");
 export const loadMetadata: TransformerFn<Filenames, Promise<Metadata[]>> = (t) => {
   const publicDirectory = path.join(process.cwd(), "public");
 
-  const imageURLPath = path.join("images");
-  const imageDirectory = path.join(publicDirectory, imageURLPath);
-  const metadataDirectory = path.join(publicDirectory, "metadata" + version);
-
-  logger.i("start", `loading metadata from ${metadataDirectory}`);
+  logger.i("start", `loading metadata from ${t.metadataDirectory}`);
   return new Promise<Metadata[]>((res) => {
-    const result = t.flatMap((filename) => {
+    const result = t.filenames.flatMap((filename) => {
       const key = path.basename(filename, ".json");
 
-      const rpath = path.join(imageURLPath, key); // relative path start from public folder
-      const ipath = path.join(imageDirectory, key); // full path
-      const fpath = path.join(metadataDirectory, filename);
+      const rpath = path.join(t.imageUrl, key); // relative path start from public folder
+      const ipath = path.join(t.imageDirectory, key); // full path
+      const fpath = path.join(t.metadataDirectory, filename);
       const raw = fs.readFileSync(fpath, "utf8");
       const json = JSON.parse(raw) as JsonData;
 
