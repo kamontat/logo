@@ -7,7 +7,7 @@ export default function Footer() {
       <div>
         <h3 className={style.title}>All asset hosted on this website for personal use only</h3>
         <h5 className={style.subtitle}>
-          However, everyone can download and modify as long as you apply with following license
+          Some of images had own by other company and licensed, please make sure before use.
         </h5>
         <div className={style.container}>
           <div className={style.leftContainer}>
@@ -33,7 +33,7 @@ export default function Footer() {
             <div>
               <small>
                 As developer (<a href="https://github.com/kamontat">Kamontat Chantrachirathumrong</a>) I feel appreciate
-                for everyone who visit our website, Thank you and be fun
+                for everyone who visit our website, Have fun.
               </small>
             </div>
           </div>
