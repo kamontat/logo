@@ -74,7 +74,7 @@ export default function Home(props: HomeProps) {
 }
 
 export const getStaticProps: GetStaticProps = async (_context) => {
-  const metadataDirectory = path.join(process.cwd(), "public", "metadatav2");
+  const metadataDirectory = path.join(process.cwd(), "public", "metadata");
 
   const filenames = fs.readdirSync(metadataDirectory);
 
