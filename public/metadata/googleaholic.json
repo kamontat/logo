@@ -5,6 +5,11 @@
       "code": "GG01",
       "ext": "jpg",
       "tags": ["v1"]
+    },
+    {
+      "code": "GG02",
+      "ext": "png",
+      "tags": ["v2"]
     }
   ]
 }
