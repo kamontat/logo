@@ -12,7 +12,7 @@
     "@zeit/next-css": "1.0.1",
     "classnames": "2.2.6",
     "colorthief": "2.3.2",
-    "debug": "4.1.1",
+    "debug": "4.2.0",
     "image-size": "0.9.1",
     "jimp": "0.14.0",
     "js-search": "2.0.0",
