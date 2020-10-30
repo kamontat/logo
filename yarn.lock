@@ -3752,10 +3752,10 @@ image-q@^1.1.1:
   resolved "https://registry.yarnpkg.com/image-q/-/image-q-1.1.1.tgz#fc84099664460b90ca862d9300b6bfbbbfbf8056"
   integrity sha1-/IQJlmRGC5DKhi2TALa/u7+/gFY=
 
-image-size@0.9.2:
-  version "0.9.2"
-  resolved "https://registry.yarnpkg.com/image-size/-/image-size-0.9.2.tgz#04a227e1a60c290dc4b66b27bb811d8e9a7c4d80"
-  integrity sha512-spzCX3sjQjIk19U+UqpGYNgoaJTOJ7yTQ/9XtvVjXbjNNzwH2fP8NeMKdGbh867rK+Ngy5IVYkcsij2udJuDLw==
+image-size@0.9.3:
+  version "0.9.3"
+  resolved "https://registry.yarnpkg.com/image-size/-/image-size-0.9.3.tgz#f7efce6b0a1649b44b9bc43b9d9a5acf272264b6"
+  integrity sha512-5SakFa79uhUVSjKeQE30GVzzLJ0QNzB53+I+/VD1vIesD6GP6uatWIlgU0uisFNLt1u0d6kBydp7yfk+lLJhLQ==
   dependencies:
     queue "6.0.1"
 
