@@ -19,7 +19,7 @@
       ]
     }, {
       "ext": "png",
-      "tags": ["external", "emoji", "agoji", "v1"],
+      "tags": ["external", "emoji", "agoji", "v0"],
       "images": [
         { "code": "AGJ0100", "tags": ["traveling"] },
         { "code": "AGJ0105", "tags": ["hiking"] },
@@ -28,6 +28,15 @@
         { "code": "AGJ0110", "tags": ["surfing"] },
         { "code": "AGJ0345", "tags": ["playing", "gamer"] },
         { "code": "AGJ0513", "tags": ["working"] }
+      ]
+    }, {
+      "ext": "png",
+      "tags": ["external", "emoji", "agoji", "v1"],
+      "images": [
+        { "code": "AGJ1001", "tags": ["playing", "gamer"] },
+        { "code": "AGJ1002", "tags": ["movie"] },
+        { "code": "AGJ1003", "tags": ["makeit-rain", "money", "rain"] },
+        { "code": "AGJ1004", "tags": ["scientist"] }
       ]
     }
   ]
