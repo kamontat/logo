@@ -24,7 +24,7 @@
 }
 
 .text.warn {
-  @apply text-orange-400;
+  @apply bg-yellow-500;
 }
 
 .text.error {
@@ -41,9 +41,9 @@
 }
 
 .searchBtn {
-  @apply flex-shrink-0 bg-teal-500 border-teal-500 text-sm border-4 text-white py-1 px-2 rounded;
+  @apply flex-shrink-0 bg-blue-500 border-blue-500 text-sm border-4 text-white py-1 px-2 rounded;
 }
 
 .searchBtn:hover {
-  @apply bg-teal-700 border-teal-700;
+  @apply bg-blue-700 border-blue-700;
 }

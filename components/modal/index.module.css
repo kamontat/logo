@@ -7,7 +7,8 @@
   @apply w-full h-full;
 
   overflow: hidden;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 5;
 }
 
 .modal>.main.container {
@@ -34,16 +35,16 @@
   @apply w-0 h-0;
 }
 
-.visible,
-.invisible {
+.display,
+.hide {
   overflow: hidden;
 }
 
-.visible {
+.display {
   @apply opacity-100 visible;
 }
 
-.invisible {
+.hide {
   @apply opacity-0 invisible;
   @apply transition-opacity duration-500 ease-in-out;
 
@@ -51,7 +52,7 @@
   border-width: 0px !important;
 }
 
-.invisible>div {
+.hide>div {
   @apply self-start;
 
   margin-top: -10000px;
@@ -109,7 +110,7 @@ svg.icon {
 }
 
 .titleContainer .metadata {
-  @apply grid grid-cols-2 row-gap-1 col-gap-3;
+  @apply grid grid-cols-2 gap-y-1 gap-x-3;
 }
 
 .titleContainer .metadata span {
@@ -157,11 +158,11 @@ svg.icon {
 
 .actionContainer .button.secondary {
   @apply bg-transparent text-gray-800;
-  @apply rounded border border-teal-400;
+  @apply rounded border border-blue-400;
 }
 
 .actionContainer .button.secondary:hover {
-  @apply bg-teal-400 text-white border-transparent;
+  @apply bg-blue-400 text-white border-transparent;
 }
 
 .actionContainer .button.cancellation {
