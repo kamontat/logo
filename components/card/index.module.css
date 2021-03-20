@@ -29,6 +29,7 @@
 
 .card .imgContainer {
   @apply flex flex-row items-center justify-center;
+  @apply cursor-pointer;
 
   min-height: 200px;
 }

@@ -23,16 +23,14 @@ export default function Card(_props: Props) {
   return (
     <div className={style.root}>
       <div className={style.card}>
-        <div className={style.imgContainer}>
-          <a onClick={select}>
-            <Image
-              className={style.img}
-              src={"/" + props.urlpath}
-              alt={props.filename}
-              width={props.size.width}
-              height={props.size.height}
-            />
-          </a>
+        <div className={style.imgContainer} onClick={select}>
+          <Image
+            className={style.img}
+            src={"/" + props.urlpath}
+            alt={props.filename}
+            width={props.size.width}
+            height={props.size.height}
+          />
         </div>
         <div className={style.detail}>
           <h1 className={style.title}>
