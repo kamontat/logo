@@ -8,7 +8,7 @@ export default function Footer() {
         <h3 className={style.title}>All assets hosted on this website is for personal use only</h3>
         <h5 className={style.subtitle}>
           However, some images might owned by other company, please make sure before use.
-          This website sourcecode hosted at <a className={style.link} href="https://github.com/kamontat/logo">github</a>.
+          This website sourcecode hosted at <a className={style.link} href="https://github.com/kamontat/asset-libraries">github</a>.
         </h5>
         <div className={style.container}>
           <div className={style.leftContainer}>

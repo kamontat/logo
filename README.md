@@ -1,7 +1,11 @@
-# @kamontat/logo
+# @kamontat/asset-libraries
 
-This project hosted in netlify with domain https://logo.kamontat.net
+This project hosted in netlify with domain https://assets.kamontat.net
 
-### Development
+## Development
 
 By Kamontat Chantrachirathumrong with NextJS
+
+## Deployment
+
+Using [Vercal](https://vercel.com/kamontatc/asset-libraries)
