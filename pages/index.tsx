@@ -34,8 +34,14 @@ const searcher = new Search();
 export default function Home(props: HomeProps) {
   searcher.add(props.images);
 
+  let query = ""
+  try {
+    const params = new URLSearchParams(window.location.search);
+    query = params.get("q") ?? ""
+  } catch (e) {}
+
   const { dataLayer } = useContext(GoogleTagManagerContext);
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState(query);
   const [images, setImages] = useState(props.images);
   const [image, setImage] = useState(props.images[0]);
   const [modalShow, isModalShow] = useState(false);
@@ -58,7 +64,7 @@ export default function Home(props: HomeProps) {
       </Head>
 
       <Modal show={modalShow} toggle={isModalShow} image={image}></Modal>
-      <Header size={images.length} onSearch={setSearch}></Header>
+      <Header size={images.length} search={search} onSearch={setSearch}></Header>
 
       <Main>
         <Grid>

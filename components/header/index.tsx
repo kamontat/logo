@@ -5,6 +5,7 @@ import style from "./index.module.css";
 
 interface HeaderProps {
   size: number;
+  search: string;
   onSearch: Dispatch<SetStateAction<string>>;
 }
 
@@ -29,6 +30,7 @@ export default function Header(props: HeaderProps) {
         type="text"
         name="search"
         placeholder={`search through over ${props.size} images`}
+        value={props.search}
         className={include(style.searchbar, style.element)}
         onChange={searching}
       ></input>
