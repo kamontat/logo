@@ -1,6 +1,6 @@
 {
   "version": "v2",
-  "data": [
+  "values": [
     {
       "ext": "png",
       "tags": ["round", "text-white", "text-black", "bg-primary", "v1"],
