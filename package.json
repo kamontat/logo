@@ -1,5 +1,5 @@
 {
-  "name": "@kamontat/logo",
+  "name": "@kamontat/assets",
   "version": "0.3.2",
   "private": true,
   "scripts": {
@@ -29,10 +29,13 @@
     "@types/react": "17.0.3",
     "@types/react-gtm-module": "2.0.0",
     "@types/stemmer": "1.0.2",
-    "autoprefixer": "10.2.5",
+    "postcss": "8.2.8",
     "postcss-flexbugs-fixes": "4.2.1",
     "postcss-import": "12.0.1",
     "postcss-preset-env": "6.7.0",
     "typescript": "4.2.3"
-  }
+  },
+  "browserslist": [
+    ">0.5%"
+  ]
 }
