@@ -5,10 +5,10 @@ export default function Footer() {
   return (
     <footer className={style.footer}>
       <div>
-        <h3 className={style.title}>All asset hosted on this website is for personal use only</h3>
+        <h3 className={style.title}>All assets hosted on this website is for personal use only</h3>
         <h5 className={style.subtitle}>
           However, some images might owned by other company, please make sure before use.
-          This website sourcecode hosted at <a href="https://github.com/kamontat/logo">github</a>.
+          This website sourcecode hosted at <a className={style.link} href="https://github.com/kamontat/logo">github</a>.
         </h5>
         <div className={style.container}>
           <div className={style.leftContainer}>
@@ -26,14 +26,14 @@ export default function Footer() {
           <div className={style.rightContainer}>
             <div>
               This work is licensed under{" "}
-              <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+              <a className={style.link} rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
                 Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
               </a>
               .
             </div>
             <div>
               <small>
-                As developer (<a href="https://github.com/kamontat">Kamontat Chantrachirathumrong</a>) I feel appreciate
+                As developer (<a className={style.link} href="https://github.com/kamontat">Kamontat Chantrachirathumrong</a>) I feel appreciate
                 for everyone who visit our website, Have fun.
               </small>
             </div>

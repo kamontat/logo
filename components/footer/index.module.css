@@ -32,3 +32,11 @@
   @apply border-0;
   min-width: 50px;
 }
+
+.link {
+  @apply text-gray-600;
+}
+
+.link:hover {
+  @apply text-gray-900 underline;
+}
