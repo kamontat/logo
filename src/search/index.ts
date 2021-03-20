@@ -1,9 +1,9 @@
+import type { ImageData } from "../interfaces/images";
+
 import * as JsSearch from "js-search";
 import stemmer from "stemmer";
 
 import { Logger } from "src/logger";
-
-import { ImagesMetadata } from "./transform/loadImagesMetadata";
 
 export class Search extends Logger {
   private searcher: JsSearch.Search;
@@ -31,11 +31,11 @@ export class Search extends Logger {
     this.i("addIndex", name);
   }
 
-  add(images: ImagesMetadata[]) {
+  add(images: ImageData[]) {
     this.searcher.addDocuments(images);
   }
 
   search(query: string) {
-    return this.searcher.search(query) as ImagesMetadata[];
+    return this.searcher.search(query) as ImageData[];
   }
 }
