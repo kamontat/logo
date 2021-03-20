@@ -1,22 +1,22 @@
-import style from "./index.module.css";
-
+import type { ImageData } from "src/interfaces/images";
 import { Dispatch, SetStateAction } from "react";
 
+import Image from "next/image";
 import Tags from "components/tags";
 
-import { ImagesMetadata } from "src/index/transform/loadImagesMetadata";
+import style from "./index.module.css";
 
 interface Props {
-  images: ImagesMetadata;
+  images: ImageData;
   onClick: Dispatch<SetStateAction<boolean>>;
-  onSelect: Dispatch<SetStateAction<ImagesMetadata>>;
+  onSelect: Dispatch<SetStateAction<ImageData>>;
 }
 
 export default function Card(_props: Props) {
   const props = _props.images;
 
   const select = () => {
-    _props.onClick((v) => !v);
+    _props.onClick(v => !v);
     _props.onSelect(props);
   };
 
@@ -25,7 +25,13 @@ export default function Card(_props: Props) {
       <div className={style.card}>
         <div className={style.imgContainer}>
           <a onClick={select}>
-            <img className={style.img} src={props.urlpath} alt={props.filename}></img>
+            <Image
+              className={style.img}
+              src={"/" + props.urlpath}
+              alt={props.filename}
+              width={props.size.width}
+              height={props.size.height}
+            />
           </a>
         </div>
         <div className={style.detail}>
