@@ -1,10 +1,14 @@
+import type { GetStaticProps } from "next";
+import type { ImageData } from "src/interfaces/images";
+import type { FileData } from "src/interfaces/metadata";
+
 import path from "path";
 import fs from "fs";
 
 import { useState, useEffect, useContext } from "react";
-
-import { GetStaticProps } from "next";
 import Head from "next/head";
+
+import pjson from "package.json";
 
 import Header from "components/header";
 import Main from "components/main";
@@ -13,18 +17,15 @@ import Card from "components/card";
 import Footer from "components/footer";
 import Modal from "components/modal";
 import ActionBar from "components/actionbar";
-
-import { Search } from "src/index/search";
-
-import { Transformer } from "src/index/transformer";
-import { loadMetadata } from "src/index/transform/loadMetadata";
-import { loadImages } from "src/index/transform/loadImages";
-import { loadImagesMetadata, ImagesMetadata } from "src/index/transform/loadImagesMetadata";
-import { Logger } from "src/logger";
 import GoogleTagManagerContext from "components/gtm";
 
+import { Search } from "src/search";
+import { Logger } from "src/logger";
+import { DataFlow, loadImageData, loadMetadata, verifyImage } from "src/dataflow";
+
+
 interface HomeProps {
-  images: ImagesMetadata[];
+  images: ImageData[];
 }
 
 const logger = new Logger("index");
@@ -52,7 +53,7 @@ export default function Home(props: HomeProps) {
   return (
     <div className="root">
       <Head>
-        <title>@kamontat/logo</title>
+        <title>{pjson.name}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -73,7 +74,7 @@ export default function Home(props: HomeProps) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async (_context) => {
+export const getStaticProps: GetStaticProps = async _context => {
   const imageUrl = path.join("images");
 
   const imageDirectory = path.join(process.cwd(), "public", imageUrl);
@@ -81,16 +82,11 @@ export const getStaticProps: GetStaticProps = async (_context) => {
 
   const filenames = fs.readdirSync(metadataDirectory);
 
-  const transformer = new Transformer({ metadataDirectory, imageDirectory, imageUrl, filenames });
-  const metadataTransformer = transformer.transform(loadMetadata);
-  const imagesTransformer = metadataTransformer.transform(loadImages);
-  const imagesMetadataTransformer = imagesTransformer.transform(loadImagesMetadata);
-
-  const images = await imagesMetadataTransformer.get();
+  const dataflow = DataFlow.new<FileData>({ metadataDirectory, imageDirectory, imageUrl, filenames });
 
   return {
     props: {
-      images,
+      images: await dataflow.async(loadMetadata).async(verifyImage).async(loadImageData).get(),
     },
   };
 };

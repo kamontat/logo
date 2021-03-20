@@ -1,14 +1,15 @@
+import type { ImageData } from "src/interfaces/images";
+
 import { useState, Dispatch, SetStateAction, MouseEvent, useEffect } from "react";
-import Link from "next/link";
 
 import include from "classnames";
 import style from "./index.module.css";
 
-import { ImagesMetadata, emptyImagesMetadata } from "src/index/transform/loadImagesMetadata";
+import { emptyImageData } from "src/interfaces/images";
 import Tags from "components/tags";
 
 export interface Props {
-  image?: ImagesMetadata;
+  image?: ImageData;
   show: boolean;
   toggle: Dispatch<SetStateAction<boolean>>;
 }
@@ -29,19 +30,19 @@ const copyPath = (text: string, isCopied: Dispatch<SetStateAction<boolean>>) => 
 };
 
 const unique = (list: string[]) => {
-  const seen = {};
+  const seen = new Map()
   return list.filter(function (item) {
     const emptyness = item !== undefined && item !== null && item !== "";
-    const uniqueness = seen.hasOwnProperty(item) ? false : (seen[item] = true);
+    const uniqueness = seen.has(item) && seen.get(item) ? false : (seen.set(item, true))
 
     return emptyness && uniqueness;
   });
 };
 
 export default function Modal(props: Props) {
-  let image = props.image ?? emptyImagesMetadata();
+  let image = props.image ?? emptyImageData();
   useEffect(() => {
-    image = props.image ?? emptyImagesMetadata();
+    image = props.image ?? emptyImageData();
   }, [props.image]);
 
   const [copy, isCopied] = useState(false);
@@ -51,13 +52,13 @@ export default function Modal(props: Props) {
 
   const styles = {};
   styles[style.modal] = true;
-  styles[style.invisible] = !props.show;
-  styles[style.visible] = props.show;
+  styles[style.hide] = !props.show;
+  styles[style.display] = props.show;
 
   const copiedStyle = {};
   copiedStyle[style.notification] = true;
-  copiedStyle[style.invisible] = !copy;
-  copiedStyle[style.visible] = copy;
+  copiedStyle[style.hide] = !copy;
+  copiedStyle[style.display] = copy;
 
   const toggle = (event: MouseEvent<HTMLDivElement | HTMLAnchorElement>) => {
     if (event.target instanceof Element) {
@@ -72,9 +73,8 @@ export default function Modal(props: Props) {
   };
 
   const tags = unique(
-    [image.key, image.ext, image.mime, image.color.name.toLowerCase(), image.color.hex]
+    [image.key, image.ext, image.mime]
       .concat(image.tags)
-      .concat(image.palette.map((p) => p.name.toLowerCase()))
   );
 
   return (

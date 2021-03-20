@@ -1,4 +1,5 @@
 import pjson from "package.json";
+
 import style from "./index.module.css";
 
 const locale = "en-US";
