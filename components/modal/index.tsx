@@ -16,7 +16,6 @@ export interface Props {
 
 const copyPath = (text: string, isCopied: Dispatch<SetStateAction<boolean>>) => {
   return () => {
-    console.log(`copying: ${text}`);
     const tmp = document.createElement("textarea");
     tmp.innerText = text;
     document.body.appendChild(tmp);
@@ -47,7 +46,7 @@ export default function Modal(props: Props) {
 
   const [copy, isCopied] = useState(false);
 
-  const root = process.browser ? window.location.href : "";
+  const root = process.browser ? window.location.origin : "";
   const path = root + image.urlpath;
 
   const styles = {};
