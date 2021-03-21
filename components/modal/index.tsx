@@ -47,7 +47,7 @@ export default function Modal(props: Props) {
   const [copy, isCopied] = useState(false);
 
   const root = process.browser ? window.location.origin : "";
-  const path = root + image.urlpath;
+  const path = root + "/" + image.urlpath; // Add '/' between root url and image url
 
   const styles = {};
   styles[style.modal] = true;
